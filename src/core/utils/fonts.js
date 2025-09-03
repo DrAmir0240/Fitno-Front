@@ -29,12 +29,12 @@ export const peyda = localFont({
         style: "normal",
       },
       {
-        path: "../../../public/fonts/woff2/PeydaWebFaNum-SemiBold.woff2",
+        path: "../../../public/fonts/woff2/PeydaWebFaNum-Bold.woff2",
         weight: "600",
         style: "normal",
       },
       {
-        path: "../../../public/fonts/woff2/PeydaWebFaNum-Bold.woff2",
+        path: "../../../public/fonts/woff2/PeydaWebFaNum-SemiBold.woff2",
         weight: "700",
         style: "normal",
       },

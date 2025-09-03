@@ -1,18 +1,17 @@
-import React from "react";
-import Header from "../organisms/Header";
-import Sidebar from "../organisms/Sidebar";
-import { MobileMenu } from "../molecules";
+import "@/app/globals.css";
+import MobileMenu from "../organisms/clubPanel/MobileMenu";
+import Header from "../organisms/clubPanel/Header";
 
-const UserLayout = ({ children }) => {
+export default function ClubPanelLayout({ children }) {
   return (
     <div>
       {/* Header */}
-      <Header />
+     
 
-      <div className="mx-auto  max-w-[700px] m-auto">
+      <div className="mx-auto min-h-screen  px-5 max-w-[700px] m-auto">
+        <Header />
         <div className="flex gap-8">
           {/* Sidebar Navigation */}
-          <Sidebar />
 
           {/* Main Content */}
           <main className="flex-1">
@@ -25,6 +24,4 @@ const UserLayout = ({ children }) => {
       </div>
     </div>
   );
-};
-
-export default UserLayout;
+}
