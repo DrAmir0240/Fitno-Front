@@ -55,7 +55,7 @@ const MobileMenu = ({ className = "" }) => {
 
   return (
     <div
-      className={`fixed bottom-0 left-0 right-0 bg-white rounded-t-[35px] max-w-[700px] m-auto mt-10  !bg-gray-300 shadow-lg z-50 ${className}`}
+      className={`fixed bottom-0 left lg:hidden rounded-t-[35px] w-full m-auto mt-10  !bg-gray-300 shadow-lg z-50 ${className}`}
     >
       <div className="flex justify-around items-end py-2 px-4">
         {menuItems.map((item) => (
