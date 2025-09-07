@@ -20,7 +20,7 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className="min-w-[235px] bg-[#289DFC]  h-screen rounded-e-4xl hidden lg:flex flex-col p-8 justify-between ">
+    <aside className="sticky top-0 right-0 min-w-[235px] bg-[#289DFC]  h-screen rounded-e-4xl hidden lg:flex flex-col p-8 justify-between ">
       <div>
         <div className="flex justify-center items-center gap-2">
           <Image

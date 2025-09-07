@@ -1,7 +1,6 @@
 import { UserLayout } from "../templates";
 import SearchBar from "../molecules/SearchBar";
 import UserMenu from "../molecules/UserMenu";
-
 import Image from "next/image";
 import Header from "../organisms/userPanel/Header";
 

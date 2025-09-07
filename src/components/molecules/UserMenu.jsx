@@ -57,7 +57,7 @@ const UserMenu = ({ className = "" }) => {
           >
             {item.icon}
           </a>
-          <span className="text-sm font-[500] text-gray-700 text-center font-medium">
+          <span className="text-sm font-[500] text-gray-700 text-center ">
             {item.title}
           </span>
         </div>
