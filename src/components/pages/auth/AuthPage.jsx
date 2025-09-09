@@ -1,11 +1,10 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui";
 import Image from "next/image";
 import { FcGoogle } from "react-icons/fc";
 
 export default function AuthPage() {
   return (
     <div className="relative min-h-screen flex items-center justify-center">
-      {/* پس‌زمینه با افکت رنگی */}
       <div className="absolute inset-0 z-0 flex items-center justify-center">
         <div className="relative w-full h-full max-w-[500px] mx-auto">
           <Image

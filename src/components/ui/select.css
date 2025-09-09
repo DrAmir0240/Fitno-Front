@@ -1,0 +1,70 @@
+/* styles/select.css */
+.select {
+  @apply flex items-center justify-between gap-2 transition-colors;
+}
+
+.select-outline {
+  @apply border border-gray-300 bg-transparent hover:border-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200;
+}
+
+.select-fill {
+  @apply border border-transparent bg-gray-100 hover:bg-gray-200 focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200;
+}
+
+.select-ghost {
+  @apply border border-transparent bg-transparent hover:bg-gray-100 focus:bg-gray-100;
+}
+
+/* Sizes */
+.select-xs { @apply h-6 text-xs px-2; }
+.select-sm { @apply h-8 text-sm px-3; }
+.select-md { @apply h-10 text-base px-4; }
+.select-lg { @apply h-12 text-lg px-4; }
+.select-xl { @apply h-14 text-xl px-4; }
+
+/* Colors */
+.select-primary { @apply text-blue-600; }
+.select-secondary { @apply text-purple-600; }
+.select-success { @apply text-green-600; }
+.select-error { @apply text-red-600; }
+.select-warning { @apply text-yellow-600; }
+.select-info { @apply text-blue-400; }
+.select-neutral { @apply text-gray-700; }
+
+/* Rounded */
+.select-rounded-xs { @apply rounded-xs; }
+.select-rounded-sm { @apply rounded-sm; }
+.select-rounded-md { @apply rounded-md; }
+.select-rounded-lg { @apply rounded-lg; }
+.select-rounded-xl { @apply rounded-xl; }
+.select-rounded-2xl { @apply rounded-2xl; }
+.select-rounded-3xl { @apply rounded-3xl; }
+.select-rounded-4xl { @apply rounded-[2rem]; }
+
+.select-fullWidth { @apply w-full; }
+
+/* Content styles */
+.select-content {
+  @apply z-50 min-w-[8rem] overflow-hidden rounded-md border bg-white shadow-md;
+}
+
+.select-viewport {
+  @apply p-1;
+}
+
+.select-scroll-btn {
+  @apply flex h-6 cursor-default items-center justify-center;
+}
+
+.select-item {
+  @apply relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-gray-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50;
+}
+
+/* Item colors */
+.select-item-primary { @apply text-blue-600; }
+.select-item-secondary { @apply text-purple-600; }
+.select-item-success { @apply text-green-600; }
+.select-item-error { @apply text-red-600; }
+.select-item-warning { @apply text-yellow-600; }
+.select-item-info { @apply text-blue-400; }
+.select-item-neutral { @apply text-gray-700; }
