@@ -1,7 +1,8 @@
 import "@/app/globals.css";
-import MobileMenu from "../organisms/clubPanel/MobileMenu";
-import Header from "../organisms/clubPanel/Header";
-import Sidebar from "../organisms/clubPanel/Sidebar";
+import Header from "@/components/layout/clubPanel/Header";
+import MobileMenu from "@/components/layout/clubPanel/MobileMenu";
+import Sidebar from "@/components/layout/clubPanel/Sidebar";
+
 
 export default function ClubPanelLayout({ children }) {
   return (

@@ -1,18 +1,18 @@
 import React from "react";
-import Header from "../organisms/Header";
-import Sidebar from "../organisms/Sidebar";
-import { MobileMenu } from "../molecules";
+
+
+
+import Sidebar from "@/components/layout/clubPanel/Sidebar";
+import MobileMenu from "@/components/layout/userPanel/MobileMenu";
+import Header from "@/components/layout/userPanel/Header";
 
 const UserLayout = ({ children }) => {
   return (
     <div>
-      {/* Header */}
-      <Header />
-
       <div className="mx-auto  max-w-[700px] m-auto">
         <div className="flex gap-8">
           {/* Sidebar Navigation */}
-          <Sidebar />
+       
 
           {/* Main Content */}
           <main className="flex-1">

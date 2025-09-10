@@ -1,5 +1,6 @@
-import ClubMenu from "@/components/molecules/ClubMenu";
-import ClubPanelLayout from "@/components/templates/ClubPanelLayout";
+import ClubMenu from "@/components/navigation/ClubMenu";
+import ClubPanelLayout from "@/layouts/ClubPanelLayout";
+
 import Image from "next/image";
 export default function DashboardPage() {
   return (

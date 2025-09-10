@@ -1,4 +1,5 @@
-import MainLayout from "../templates/MainLayout";
+import { MainLayout } from "@/layouts";
+
 
 const HomePage = () => {
   return (

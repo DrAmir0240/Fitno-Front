@@ -1,8 +1,10 @@
-import { UserLayout } from "../templates";
-import SearchBar from "../molecules/SearchBar";
-import UserMenu from "../molecules/UserMenu";
+
+import SearchBar from "../navigation/SearchBar";
+import UserMenu from "../navigation/UserMenu";
 import Image from "next/image";
-import Header from "../organisms/userPanel/Header";
+
+import { UserLayout } from "@/layouts";
+import Header from "../layout/userPanel/Header";
 
 const UserHomePage = () => {
   return (

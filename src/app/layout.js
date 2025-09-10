@@ -1,4 +1,4 @@
-import { peyda } from "../core/utils/fonts";
+import { peyda } from "../utils/fonts";
 import "./globals.css";
 
 export const metadata = {
