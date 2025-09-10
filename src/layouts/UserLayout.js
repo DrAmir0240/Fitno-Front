@@ -10,7 +10,7 @@ const UserLayout = ({ children }) => {
        
 
           {/* Main Content */}
-          <main className="flex-1">
+          <main className="flex-1 pb-30">
             <div className="bg-white rounded-lg p-6">{children}</div>
           </main>
         </div>

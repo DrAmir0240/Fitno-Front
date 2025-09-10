@@ -2,7 +2,7 @@ import { Button } from "@/components/ui";
 import { GoArrowDown, GoArrowUp } from "react-icons/go";
 import { RxDownload } from "react-icons/rx";
 
-export default function({transactions}){
+export default function TransactionsList ({transactions}){
     return(
         <div className="bg-white rounded-xl">
         {transactions.map((transaction) => (
