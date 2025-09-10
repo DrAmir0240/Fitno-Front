@@ -5,14 +5,14 @@ export default function RegisterPage() {
   return (
     <div className="bg-[#D0E4FF] min-h-screen max-w-[600px] mx-auto relative px-10 pb-5 flex flex-col">
       <Image
-        src="/images/pattern2.svg"
+        src="/images/user/pattern2.svg"
         width={300}
         height={300}
         className="absolute top-0 right-0"
         alt="pattern"
       />
       <Image 
-        src="/images/pattern.svg"
+        src="/images/user/pattern.svg"
         width={300}
         height={300}
         className="absolute bottom-0 left-0"
@@ -20,7 +20,7 @@ export default function RegisterPage() {
       />
       
       <div className="flex justify-center pt-10">
-        <Image src="/images/frame.svg" width={48} height={48} alt="frame" />
+        <Image src="/images/user/frame.svg" width={48} height={48} alt="frame" />
       </div>
    
 

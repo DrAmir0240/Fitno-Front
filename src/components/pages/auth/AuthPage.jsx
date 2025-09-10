@@ -8,7 +8,7 @@ export default function AuthPage() {
       <div className="absolute inset-0 z-0 flex items-center justify-center">
         <div className="relative w-full h-full max-w-[500px] mx-auto">
           <Image
-            src="/images/auth.jpg"
+            src="/images/user/auth.jpg"
             alt="Authentication Background"
             fill
             className="object-cover opacity-35"

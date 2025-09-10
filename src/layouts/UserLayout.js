@@ -1,8 +1,3 @@
-import React from "react";
-
-
-
-import Sidebar from "@/components/layout/clubPanel/Sidebar";
 import MobileMenu from "@/components/layout/userPanel/MobileMenu";
 import Header from "@/components/layout/userPanel/Header";
 
