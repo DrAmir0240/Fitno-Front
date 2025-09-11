@@ -17,6 +17,7 @@ const buttonVariants = cva(
           "bg-slate-100 text-slate-900 hover:bg-slate-100/80 dark:bg-slate-800 dark:text-slate-50 dark:hover:bg-slate-800/80",
         ghost: "hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50",
         link: "text-slate-900 underline-offset-4 hover:underline dark:text-slate-50",
+        custom: "",
       },
       size: {
         default: "h-12 px-4 py-2",
@@ -39,19 +40,37 @@ const Button = React.forwardRef(({
   asChild = false, 
   startIcon, 
   endIcon, 
+  color, 
   children, 
   ...props 
 }, ref) => {
   const Comp = asChild ? Slot : "button";
+
+  const getColorStyle = () => {
+    if (!color) return {};
+
+    if (variant === "custom") {
+      return {
+        backgroundColor: color,
+        color: '#FFFFFF'
+      };
+    }
+
+    return {
+      color: color,
+      borderColor: color,
+    };
+  };
   
   return (
     <Comp
       className={cn(buttonVariants({ variant, size, className }))}
+      style={getColorStyle()} 
       ref={ref}
       {...props}
     >
       {startIcon && (
-        <span className="inline-flex items-center ml-2">
+        <span className="inline-flex items-center mr-2">
           {startIcon}
         </span>
       )}
@@ -59,7 +78,7 @@ const Button = React.forwardRef(({
       {children}
       
       {endIcon && (
-        <span className="inline-flex items-center mr-2">
+        <span className="inline-flex items-center ml-2">
           {endIcon}
         </span>
       )}
