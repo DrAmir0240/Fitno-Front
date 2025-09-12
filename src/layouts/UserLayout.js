@@ -1,7 +1,8 @@
 import MobileMenu from "@/components/layout/userPanel/MobileMenu";
 import Header from "@/components/layout/userPanel/Header";
+import { cn } from "@/lib/utils";
 
-const UserLayout = ({ children }) => {
+const UserLayout = ({ children  , mainClass}) => {
   return (
     <div>
       <div className="mx-auto  max-w-[700px] m-auto">
@@ -11,7 +12,7 @@ const UserLayout = ({ children }) => {
 
           {/* Main Content */}
           <main className="flex-1 pb-30">
-            <div className="bg-white rounded-lg p-6">{children}</div>
+            <div className={cn("bg-white rounded-lg p-6" , mainClass)}>{children}</div>
           </main>
         </div>
 
