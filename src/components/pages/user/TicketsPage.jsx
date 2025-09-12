@@ -1,0 +1,17 @@
+import { BreadCrumb } from "@/components/shared";
+
+import { UserLayout } from "@/layouts";
+
+import TicketItems from "@/components/templates/tickets/TicketItems";
+
+function TicketsPage() {
+  return (
+    <UserLayout>
+      <BreadCrumb title="تاریخچه تیکت ها" />
+
+      <TicketItems />
+    </UserLayout>
+  );
+}
+
+export default TicketsPage;
