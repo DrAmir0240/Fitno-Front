@@ -13,7 +13,8 @@ import { MdOutlineHistory } from "react-icons/md";
 import { MdOutlineMiscellaneousServices } from "react-icons/md";
 
 import { Sheet, SheetContent } from "@/components/ui/sheet";
-import { X, Home, User, Settings, Calendar, FileText } from "lucide-react";
+import { ScrollArea } from "@/components/ui/scroll-area"; // ایمپورت ScrollArea
+import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useSidebar } from "@/components/context/SidebarContext";
 import Image from "next/image";
@@ -55,49 +56,52 @@ export function Sidebar() {
                   className="z-10 rounded-full border-4 border-white p-0 object-cover"
                 />
                  <div>
-                    <h3 className=" text-base font-semibold"> هلیا</h3>
-                    <p className=" text-xs font-medium text-gray-300"> نام شهر</p>
+                    <h3 className="text-base font-semibold"> هلیا</h3>
+                    <p className="text-xs font-medium text-gray-300"> نام شهر</p>
                  </div>
               </div>
               <Button
                 variant="ghost"
                 size="icon"
-                onClick={() => setOpen(false)}
+                onClick={closeSidebar} 
               >
                 <X className="h-5 w-5" />
               </Button>
             </div>
 
-            <nav className="flex-1 p-2 space-y-1">
-              {menuItems.map((item) => {
-                const Icon = item.icon;
-                const isActive = pathname === item.href;
+           
+            <ScrollArea className="flex-1" dir="rtl">
+              <nav className="flex-1 p-2 space-y-1" >
+                {menuItems.map((item) => {
+                  const Icon = item.icon;
+                  const isActive = pathname === item.href;
 
-                return (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className={cn(
-                      isActive
-                        ? "bg-slate-200 text-slate-900"
-                        : "text-slate-600 hover:bg-slate-50",
-                      "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
-                    )}
-                  >
-                    <Icon
+                  return (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      onClick={closeSidebar} 
                       className={cn(
                         isActive
-                          ? "text-slate-700"
-                          : "text-slate-400 group-hover:text-slate-500",
-                        "ml-3 flex-shrink-0 h-5 w-5"
+                          ? "bg-slate-200 text-slate-900"
+                          : "text-slate-600 hover:bg-slate-50",
+                        "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
                       )}
-                    />
-                    {item.name}
-                  </Link>
-                );
-              })}
-            </nav>
+                    >
+                      <Icon
+                        className={cn(
+                          isActive
+                            ? "text-slate-700"
+                            : "text-slate-400 group-hover:text-slate-500",
+                          "ml-3 flex-shrink-0 h-5 w-5"
+                        )}
+                      />
+                      {item.name}
+                    </Link>
+                  );
+                })}
+              </nav>
+            </ScrollArea>
           </div>
         </SheetContent>
       </Sheet>
