@@ -1,3 +1,4 @@
+import { SidebarProvider } from "@/components/context/SidebarContext";
 import { peyda } from "../utils/fonts";
 import "./globals.css";
 
@@ -9,7 +10,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
-      <body className={peyda.className}>{children}</body>
+      <body className={peyda.className}>
+         <SidebarProvider>
+        {children}
+        </SidebarProvider>
+        </body>
     </html>
   );
 }

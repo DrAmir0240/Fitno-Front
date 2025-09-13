@@ -46,7 +46,6 @@ function SettingPage() {
             height={125} 
             alt="profile" 
             className="z-10 rounded-full border-4 border-white p-0 object-cover"
-            style={{ width: '125px', height: '125px' }}
           />
           
 
