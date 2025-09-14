@@ -1,7 +1,7 @@
 import { BreadCrumb } from '@/components/shared';
 import { UserLayout } from '@/layouts';
-import { PaymentFooter, SelectedSessions } from '@/components/templates/payment';
-import { DiscountSection } from '@/components/templates/register-club';
+import { PaymentFooter, SelectedSessions } from '@/components/templates/profile/payment';
+import { DiscountSection } from '@/components/templates/profile/register-club';
 
 
 function PaymentPage() {

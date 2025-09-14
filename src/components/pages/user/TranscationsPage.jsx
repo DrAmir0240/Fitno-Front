@@ -4,7 +4,7 @@ import { Button } from '@/components/ui';
 import { RxDownload } from "react-icons/rx";
 import { GoArrowDown , GoArrowUp   } from "react-icons/go";
 import { BreadCrumb } from '@/components/shared';
-import TransactionsList from '@/components/templates/transactions/transactionsList';
+import TransactionsList from '@/components/templates/profile/transactions/transactionsList';
 
 const TransactionsPage = () => {
   const transactions = [

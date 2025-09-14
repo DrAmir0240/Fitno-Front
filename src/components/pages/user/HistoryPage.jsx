@@ -4,7 +4,7 @@ import { UserLayout } from '@/layouts';
 import { IoIosArrowBack } from 'react-icons/io';
 import { Button } from '@/components/ui';
 import { BreadCrumb } from '@/components/shared';
-import HistoryItems from '@/components/templates/history/HistoryItems';
+import HistoryItems from '@/components/templates/profile/history/HistoryItems';
 
 const HistoryPage = () => {
   const historyItems = [

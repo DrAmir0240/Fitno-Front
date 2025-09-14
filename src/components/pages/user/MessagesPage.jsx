@@ -1,5 +1,5 @@
 import { BreadCrumb } from "@/components/shared";
-import MessagesList from "@/components/templates/messages/MessagesList";
+import MessagesList from "@/components/templates/profile/messages/MessagesList";
 import { ReusableTabs } from "@/components/ui/tabs";
 import { UserLayout } from "@/layouts";
 

@@ -3,7 +3,7 @@ import React from 'react';
 import { UserLayout } from '@/layouts';
 import { ReusableTabs } from '@/components/ui/tabs';
 import { BreadCrumb } from '@/components/shared';
-import { DiscountCodesList } from '@/components/templates/discount';
+import { DiscountCodesList } from '@/components/templates/profile/discount';
 
 
 const DiscountsPage = () => {

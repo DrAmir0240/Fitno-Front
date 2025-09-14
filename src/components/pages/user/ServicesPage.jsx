@@ -2,7 +2,7 @@ import React from 'react';
 import { UserLayout } from '@/layouts';
 import { BreadCrumb } from '@/components/shared';
 import { SearchBar } from '@/components/navigation';
-import { FilterButtons, SessionsList } from '@/components/templates/services';
+import { FilterButtons, SessionsList } from '@/components/templates/profile/services';
 import { Button } from '@/components/ui';
 
 

@@ -1,6 +1,6 @@
 import { UserLayout } from "@/layouts";
 import { BreadCrumb } from "@/components/shared";
-import { TransactionList, WalletActions, WalletBalance } from "@/components/templates/wallet";
+import { TransactionList, WalletActions, WalletBalance } from "@/components/templates/profile/wallet";
 
 export default function WalletPage() {
   return (

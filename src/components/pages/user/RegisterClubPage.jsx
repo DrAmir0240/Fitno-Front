@@ -3,7 +3,7 @@ import { useState } from "react";
 import { BreadCrumb } from "@/components/shared";
 import { Button } from "@/components/ui";
 import { UserLayout } from "@/layouts";
-import { DiscountSection, PlanDetails, PlanSelection } from "@/components/templates/register-club";
+import { DiscountSection, PlanDetails, PlanSelection } from "@/components/templates/profile/register-club";
 
 const RegisterClubPage = () => {
   const [discountCode, setDiscountCode] = useState('98KDN');
