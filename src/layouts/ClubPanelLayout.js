@@ -1,4 +1,5 @@
 import "@/app/globals.css";
+import { SidebarProvider } from "@/components/context/SidebarContext";
 import Header from "@/components/layout/clubPanel/Header";
 import MobileMenu from "@/components/layout/clubPanel/MobileMenu";
 import Sidebar from "@/components/layout/clubPanel/Sidebar";
@@ -6,6 +7,7 @@ import Sidebar from "@/components/layout/clubPanel/Sidebar";
 
 export default function ClubPanelLayout({ children }) {
   return (
+    <SidebarProvider>
     <div>
 
       <div className="mx-auto min-h-screen w-full   m-auto">
@@ -23,5 +25,6 @@ export default function ClubPanelLayout({ children }) {
         <MobileMenu />
       </div>
     </div>
+    </SidebarProvider>
   );
 }

@@ -2,6 +2,7 @@ import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap rounded-xl text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 cursor-pointer",
@@ -16,7 +17,7 @@ const buttonVariants = cva(
         secondary:
           "bg-slate-100 text-slate-900 hover:bg-slate-100/80 dark:bg-slate-800 dark:text-slate-50 dark:hover:bg-slate-800/80",
         ghost: "hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50",
-        link: "text-slate-900 underline-offset-4 hover:underline dark:text-slate-50",
+        link: "text-slate-900 underline-offset-4  dark:text-slate-50",
         custom: "",
       },
       size: {
@@ -41,10 +42,21 @@ const Button = React.forwardRef(({
   startIcon, 
   endIcon, 
   color, 
+  href,
   children, 
   ...props 
 }, ref) => {
-  const Comp = asChild ? Slot : "button";
+  // تعیین نوع کامپوننت بر اساس props
+  let Comp = asChild ? Slot : "button";
+  
+  // اگر واریانت link باشد و href داشته باشد، از Link استفاده کن
+  if (variant === "link" && href) {
+    Comp = Link;
+  }
+  // اگر asChild true باشد و href داشته باشد، از Link استفاده کن
+  else if (asChild && href) {
+    Comp = Link;
+  }
 
   const getColorStyle = () => {
     if (!color) return {};
@@ -65,12 +77,13 @@ const Button = React.forwardRef(({
   return (
     <Comp
       className={cn(buttonVariants({ variant, size, className }))}
-      style={getColorStyle()} 
+      style={getColorStyle()}
+      href={href} // اضافه کردن href برای لینک
       ref={ref}
       {...props}
     >
       {startIcon && (
-        <span className="inline-flex items-center mr-2">
+        <span className="inline-flex items-center ml-2">
           {startIcon}
         </span>
       )}
@@ -78,7 +91,7 @@ const Button = React.forwardRef(({
       {children}
       
       {endIcon && (
-        <span className="inline-flex items-center ml-2">
+        <span className="inline-flex items-center mr-2">
           {endIcon}
         </span>
       )}

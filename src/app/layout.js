@@ -10,11 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
-      <body className={peyda.className}>
-         <SidebarProvider>
-        {children}
-        </SidebarProvider>
-        </body>
+      <body className={peyda.className}>{children}</body>
     </html>
   );
 }
