@@ -1,4 +1,4 @@
-export function AttendanceCard({ item }) {
+export const AttendanceCard =({ item }) =>{
   return (
     <div>
       <div

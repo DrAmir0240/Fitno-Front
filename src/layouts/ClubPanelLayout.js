@@ -15,7 +15,7 @@ export default function ClubPanelLayout({ children }) {
           {/* Sidebar Navigation */}
     <Sidebar/>
           {/* Main Content */}
-          <main className="flex-1 max-w-[1200px] mx-auto pb-30">
+          <main className="flex-1 max-w-[1250px] mx-auto pb-30">
           <Header />
             <div className="bg-white rounded-lg p-6">{children}</div>
           </main>

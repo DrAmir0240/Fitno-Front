@@ -55,12 +55,11 @@ const MobileMenu = ({ className = "" }) => {
 
   return (
     <div
-     className={`fixed bottom-0 inset-x-0 rounded-t-[35px] max-w-[700px] mt-15 !bg-gray-300 shadow-lg z-50 mx-auto ${className}`}
+     className={`fixed bottom-0 inset-x-0 rounded-t-[35px]   !bg-gray-300 shadow-lg z-50 ${className}`}
     >
       <div className="flex justify-around items-end py-2 px-4">
         {menuItems.map((item) => (
-          <div key={item.id} className="flex flex-col items-center relative">
-            {/* Icon Container with Gradient Background - Positioned outside container */}
+          <div key={item.id} className="flex flex-col items-center ">
             <div
               className={`w-12 h-12 rounded-2xl flex items-center justify-center text-white mb-2 -mt-6 shadow-lg`}
               style={{ background: item.gradient }}
@@ -68,7 +67,6 @@ const MobileMenu = ({ className = "" }) => {
               {item.icon}
             </div>
 
-            {/* Menu Item Container */}
             <a
               href={item.href}
               className={`flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-200 ${

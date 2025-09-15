@@ -1,4 +1,4 @@
-import AttendanceCard from "./AttendanceCard";
+import { AttendanceCard } from ".";
 
 export function AttendanceGrid({ items }) {
   return (
