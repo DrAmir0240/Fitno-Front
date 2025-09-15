@@ -2,7 +2,7 @@ export function AttendanceCard({ item }) {
   return (
     <div>
       <div
-        className={`rounded-xl p-2 text-center transition-all hover:shadow-lg cursor-pointer ${
+        className={`rounded-3xl p-4 text-center transition-all hover:shadow-lg cursor-pointer ${
           item.status === "inactive"
             ? "bg-[#FFC3C3] border-2 border-red-200"
             : "bg-[#9595951C] border-2 border-gray-200 hover:border-blue-300"

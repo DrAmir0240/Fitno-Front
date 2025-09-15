@@ -32,6 +32,11 @@ export default function Sidebar() {
       label: "مدیریت کارکنان",
     },
     {
+      icon: <IoSettingsOutline size={24} />,
+      href: "/club-panel/services",
+      label: "لیست سانس ها",
+    },
+    {
       icon: <PiUserCirclePlus size={24} />,
       href: "/club-panel/register",
       label: "ثبت نام",

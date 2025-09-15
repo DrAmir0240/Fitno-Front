@@ -22,7 +22,7 @@ function AttendancePage() {
 
   return (
     <ClubPanelLayout>
-      <div className="max-w-7xl mx-auto">
+      <div className=" mx-auto">
         <AttendanceHeader />
         <AttendanceGrid items={inventoryItems} />
       </div>
