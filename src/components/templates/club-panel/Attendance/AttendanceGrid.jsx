@@ -10,4 +10,3 @@ export function AttendanceGrid({ items }) {
   );
 }
 
-export default AttendanceGrid;

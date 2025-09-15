@@ -28,4 +28,3 @@ export function AttendanceCard({ item }) {
   );
 }
 
-export default AttendanceCard;

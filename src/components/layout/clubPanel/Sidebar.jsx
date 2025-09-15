@@ -14,6 +14,7 @@ import {
   TbUserHeart,
   TbReportAnalytics,
   TbListSearch,
+  TbDiscount
 } from "react-icons/tb";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsPersonWalking } from "react-icons/bs";

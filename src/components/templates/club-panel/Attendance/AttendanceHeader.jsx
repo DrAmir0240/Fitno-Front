@@ -70,4 +70,3 @@ export function AttendanceHeader() {
   );
 }
 
-export default AttendanceHeader;
