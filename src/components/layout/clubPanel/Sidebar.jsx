@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { RiHome6Line, RiCustomerService2Line } from "react-icons/ri";
 import { IoSettingsOutline } from "react-icons/io5";
+import { LiaMoneyBillWaveSolid } from "react-icons/lia";
 import {
   TbUserPlus,
   TbUserHeart,
@@ -35,6 +36,11 @@ export default function Sidebar() {
       icon: <IoSettingsOutline size={24} />,
       href: "/club-panel/services",
       label: "لیست سانس ها",
+    },
+     {
+      icon: <LiaMoneyBillWaveSolid size={24} />,
+      href: "/club-panel/revenues",
+      label: "درآمد ها",
     },
     {
       icon: <PiUserCirclePlus size={24} />,
