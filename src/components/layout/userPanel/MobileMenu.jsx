@@ -14,7 +14,7 @@ const MobileMenu = ({ className = "" }) => {
     {
       id: 1,
       title: "پشتیبانی",
-      icon: <PiChatsThin size={38} />,
+      icon: <PiChatsThin size={30} />,
       href: "/",
       isActive: true,
       gradient: "linear-gradient(180deg, #289DFC 59.13%, #2563EB 100%)",
@@ -22,7 +22,7 @@ const MobileMenu = ({ className = "" }) => {
     {
       id: 2,
       title: " پرداخت",
-      icon: <GrBasket size={38} />,
+      icon: <GrBasket size={30} />,
       href: "/messages",
       isActive: false,
       gradient: "linear-gradient(180deg, #AEAFF7 62.98%, #9D9ED6 100%)",
@@ -30,7 +30,7 @@ const MobileMenu = ({ className = "" }) => {
     {
       id: 3,
       title: "خانه",
-      icon: <RiHome3Line size={38} />,
+      icon: <RiHome3Line size={30} />,
       href: "/payment",
       isActive: false,
       gradient: "linear-gradient(180deg, #F09E54 67.31%, #D28A48 100%)",
@@ -38,7 +38,7 @@ const MobileMenu = ({ className = "" }) => {
     {
       id: 4,
       title: "پیام ها",
-      icon: <HiQuestionMarkCircle size={38} />,
+      icon: <HiQuestionMarkCircle size={30} />,
       href: "/support",
       isActive: false,
       gradient: "linear-gradient(180deg, #A0E3E2 74.52%, #7EBFBD 100%)",
@@ -46,7 +46,7 @@ const MobileMenu = ({ className = "" }) => {
     {
       id: 5,
       title: "تخفیف ها",
-      icon: <HiGift size={38} />,
+      icon: <HiGift size={30} />,
       href: "/discounts",
       isActive: false,
       gradient: "linear-gradient(180deg, #EF5DA8 44.71%, #B94782 100%)",
@@ -62,7 +62,7 @@ const MobileMenu = ({ className = "" }) => {
           <div key={item.id} className="flex flex-col items-center relative">
             {/* Icon Container with Gradient Background - Positioned outside container */}
             <div
-              className={`w-[60px] h-[60px] rounded-2xl flex items-center justify-center text-white mb-2 -mt-6 shadow-lg`}
+              className={`w-12 h-12 rounded-2xl flex items-center justify-center text-white mb-2 -mt-6 shadow-lg`}
               style={{ background: item.gradient }}
             >
               {item.icon}
