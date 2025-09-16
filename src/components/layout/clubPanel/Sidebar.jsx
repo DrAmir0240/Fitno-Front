@@ -30,8 +30,8 @@ export default function Sidebar() {
     { icon: <RiHome6Line size={22} />, href: "/club-panel", label: "داشبورد" },
     {
       icon: <IoSettingsOutline size={24} />,
-      href: "/club-panel/employee",
-      label: "مدیریت کارکنان",
+      href: "/club-panel/profile-setting",
+      label: "تنظیمات پروفایل باشگاه"
     },
     {
       icon: <IoSettingsOutline size={24} />,
