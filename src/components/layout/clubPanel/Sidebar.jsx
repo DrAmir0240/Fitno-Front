@@ -45,8 +45,8 @@ export default function Sidebar() {
     },
     {
       icon: <PiUserCirclePlus size={24} />,
-      href: "/club-panel/register",
-      label: "ثبت نام",
+      href: "/club-panel/club-register",
+      label: "ثبت باشگاه",
     },
     {
       icon: <TbUserPlus size={24} />,
