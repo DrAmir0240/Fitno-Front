@@ -13,10 +13,11 @@ import {
   TbUserPlus,
   TbUserHeart,
   TbReportAnalytics,
-  TbListSearch,
-  TbDiscount
+  TbListSearch
 } from "react-icons/tb";
 import { HiOutlineMail } from "react-icons/hi";
+import { IoTicketOutline } from "react-icons/io5";
+
 import { BsPersonWalking } from "react-icons/bs";
 import { BiBasket } from "react-icons/bi";
 import { CgGym } from "react-icons/cg";
@@ -54,9 +55,9 @@ export default function Sidebar() {
       label: "افزودن کاربر",
     },
     {
-      icon: <BsPersonWalking size={24} />,
-      href: "/club-panel/users",
-      label: "اعضای باشگاه",
+      icon: <IoTicketOutline size={24} />,
+      href: "/club-panel/tickets",
+      label: "مدیریت تیکت ها",
     },
     {
       icon: <TbUserHeart size={24} />,
