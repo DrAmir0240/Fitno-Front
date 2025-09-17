@@ -11,14 +11,13 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { LiaMoneyBillWaveSolid } from "react-icons/lia";
 import {
   TbUserPlus,
-  TbUserHeart,
   TbReportAnalytics,
   TbListSearch
 } from "react-icons/tb";
 import { HiOutlineMail } from "react-icons/hi";
 import { IoTicketOutline } from "react-icons/io5";
+import { IoImagesOutline } from "react-icons/io5";
 
-import { BsPersonWalking } from "react-icons/bs";
 import { BiBasket } from "react-icons/bi";
 import { CgGym } from "react-icons/cg";
 import { PiUserCirclePlus, PiSignOut } from "react-icons/pi";
@@ -60,9 +59,9 @@ export default function Sidebar() {
       label: "مدیریت تیکت ها",
     },
     {
-      icon: <TbUserHeart size={24} />,
-      href: "/club-panel/coach",
-      label: "مربی",
+      icon: <IoImagesOutline size={24} />,
+      href: "/club-panel/banners",
+      label: "مدیریت بنر ها",
     },
     {
       icon: <RiCustomerService2Line size={24} />,

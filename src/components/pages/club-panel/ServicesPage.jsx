@@ -1,10 +1,7 @@
-
 import ClubPanelLayout from "@/layouts/ClubPanelLayout";
 import { SearchBar } from "@/components/navigation";
-import ServicesHeader from "@/components/templates/club-panel/services/ServicesHeader";
+import PageHeader from "@/components/shared/PageHeader";
 import ServicesList from "@/components/templates/club-panel/services/ServicesList";
-
-
 
 function ServicesPage() {
   const sessions = [
@@ -29,9 +26,13 @@ function ServicesPage() {
   ];
   return (
     <ClubPanelLayout>
-        <ServicesHeader />
-        <SearchBar placeholder="جستحو کنید ..." />
-         <ServicesList sessions={sessions} />
+      <PageHeader
+        title="لیست سانس های باشگاه ایران مهر"
+        buttonText="سانس جدید"
+        showButton={true}
+      />
+      <SearchBar placeholder="جستحو کنید ..." />
+      <ServicesList sessions={sessions} />
     </ClubPanelLayout>
   );
 }
