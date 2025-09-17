@@ -1,12 +1,11 @@
 "use client"
 import { SearchBar } from "@/components/navigation"
 import MessagesList from "@/components/templates/profile/messages/MessagesList";
-import { Button } from "@/components/ui"
-import { ReusableTabs } from "@/components/ui/tabs";
+
 import ClubPanelLayout from "@/layouts/ClubPanelLayout"
-import { LuCircleFadingPlus } from "react-icons/lu"
 import { useState } from "react";
-import { MessagesContent, MessagesHeader } from "@/components/templates/club-panel/messages";
+import { MessagesContent } from "@/components/templates/club-panel/messages";
+import PageHeader from "@/components/shared/PageHeader";
 
 function MessagesPage() {
   const [allMessages, setAllMessages] = useState([
@@ -127,7 +126,11 @@ function MessagesPage() {
 
   return (
     <ClubPanelLayout>
-      <MessagesHeader />
+      <PageHeader
+        title="لیست پیام ها"
+        buttonText="پیام جدید"
+        showButton={true}
+      />
       <SearchBar placeholder="جستجو کنید..." />
       <MessagesContent tabsData={tabsData} />
     </ClubPanelLayout>

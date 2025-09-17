@@ -1,4 +1,5 @@
 
+import PageHeader from '@/components/shared/PageHeader'
 import { RevenueFilters, RevenueSummary, RevenueTable } from '@/components/templates/club-panel/revenues'
 import ClubPanelLayout from '@/layouts/ClubPanelLayout'
 
@@ -77,11 +78,11 @@ function RevenuesPage() {
 
   return (
     <ClubPanelLayout>
-      <div className='mt-7'>
-        <h1 className="text-xl font-bold text-gray-800 mb-6">
-          گزارش گیری درآمد
-        </h1>
-      </div>
+  
+      <PageHeader
+        title="گزارش گیری درآمد ها"
+        showButton={false}
+      />
 
       <RevenueSummary reports={reports} />
       <RevenueFilters />

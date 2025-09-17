@@ -11,7 +11,7 @@ function PageHeader({
   titleClassName = ""
 }) {
   return (
-    <div className="md:flex justify-between mb-6 items-center">
+    <div className="md:flex justify-between my-6 items-center">
       <h1 className={`text-xl font-bold text-gray-800 ${titleClassName}`}>
         {title}
       </h1>

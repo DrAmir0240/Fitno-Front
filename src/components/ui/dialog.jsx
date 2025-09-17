@@ -3,16 +3,7 @@
 import * as React from "react"
 import * as DialogPrimitive from "@radix-ui/react-dialog"
 import { X } from "lucide-react"
-
 import { cn } from "@/lib/utils"
-
-const Dialog = DialogPrimitive.Root
-
-const DialogTrigger = DialogPrimitive.Trigger
-
-const DialogPortal = DialogPrimitive.Portal
-
-const DialogClose = DialogPrimitive.Close
 
 const DialogOverlay = React.forwardRef(({ className, ...props }, ref) => (
   <DialogPrimitive.Overlay
@@ -26,7 +17,7 @@ const DialogOverlay = React.forwardRef(({ className, ...props }, ref) => (
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
 
 const DialogContent = React.forwardRef(({ className, children, ...props }, ref) => (
-  <DialogPortal>
+  <DialogPrimitive.Portal>
     <DialogOverlay />
     <DialogPrimitive.Content
       ref={ref}
@@ -42,55 +33,60 @@ const DialogContent = React.forwardRef(({ className, children, ...props }, ref) 
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>
-  </DialogPortal>
+  </DialogPrimitive.Portal>
 ))
 DialogContent.displayName = DialogPrimitive.Content.displayName
 
-const DialogHeader = ({
+const Dialog = React.forwardRef(({ 
+  open, 
+  onOpenChange, 
+  trigger, 
+  title, 
+  description, 
+  children, 
+  footer,
   className,
-  ...props
-}) => (
-  <div
-    className={cn("flex flex-col space-y-1.5 text-center sm:text-left", className)}
-    {...props} />
-)
-DialogHeader.displayName = "DialogHeader"
+  contentClassName,
+  ...props 
+}, ref) => {
+  return (
+    <DialogPrimitive.Root open={open} onOpenChange={onOpenChange} {...props}>
+      {trigger && (
+        <DialogPrimitive.Trigger asChild>
+          {trigger}
+        </DialogPrimitive.Trigger>
+      )}
+      
+      <DialogContent ref={ref} className={cn(contentClassName)} {...props}>
+        {(title || description) && (
+          <div className={cn("flex flex-col mx-5  ", className)}>
+            {title && (
+              <DialogPrimitive.Title className="text-lg font-semibold leading-none tracking-tight">
+                {title}
+              </DialogPrimitive.Title>
+            )}
+            {description && (
+              <DialogPrimitive.Description className="text-sm text-muted-foreground">
+                {description}
+              </DialogPrimitive.Description>
+            )}
+          </div>
+        )}
+        
+        <div className="flex-1">
+          {children}
+        </div>
+        
+        {footer && (
+          <div className="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2">
+            {footer}
+          </div>
+        )}
+      </DialogContent>
+    </DialogPrimitive.Root>
+  )
+})
 
-const DialogFooter = ({
-  className,
-  ...props
-}) => (
-  <div
-    className={cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className)}
-    {...props} />
-)
-DialogFooter.displayName = "DialogFooter"
+Dialog.displayName = "Dialog"
 
-const DialogTitle = React.forwardRef(({ className, ...props }, ref) => (
-  <DialogPrimitive.Title
-    ref={ref}
-    className={cn("text-lg font-semibold leading-none tracking-tight", className)}
-    {...props} />
-))
-DialogTitle.displayName = DialogPrimitive.Title.displayName
-
-const DialogDescription = React.forwardRef(({ className, ...props }, ref) => (
-  <DialogPrimitive.Description
-    ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
-    {...props} />
-))
-DialogDescription.displayName = DialogPrimitive.Description.displayName
-
-export {
-  Dialog,
-  DialogPortal,
-  DialogOverlay,
-  DialogTrigger,
-  DialogClose,
-  DialogContent,
-  DialogHeader,
-  DialogFooter,
-  DialogTitle,
-  DialogDescription,
-}
+export default Dialog
