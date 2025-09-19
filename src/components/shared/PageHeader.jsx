@@ -11,14 +11,14 @@ function PageHeader({
   titleClassName = ""
 }) {
   return (
-    <div className="md:flex justify-between my-6 items-center">
+    <div className="flex flex-col md:flex-row gap-5 justify-between my-6 items-center">
       <h1 className={`text-xl font-bold text-gray-800 ${titleClassName}`}>
         {title}
       </h1>
       
       {showButton && (
         <Button
-          className={`px-10 rounded-[14px] text-base font-bold ${buttonClassName}`}
+          className={`px-10 rounded-[14px] text-base font-bold  ${buttonClassName}`}
           endIcon={<LuCircleFadingPlus size={18} />}
           size="sm"
           onClick={onButtonClick}
