@@ -7,7 +7,7 @@ const Header = ({ className = "" }) => {
         <Link href="/" >home</Link>
         <Link href="/profile" >profile</Link>
         <Link href="/club-panel" >club</Link>
-        <Link href="/admin" >admin</Link>
+        <Link href="/admin/users" >admin</Link>
       </div>
     </header>
   );
