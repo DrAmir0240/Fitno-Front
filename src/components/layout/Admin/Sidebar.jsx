@@ -31,7 +31,7 @@ export default function Sidebar() {
     },
     {
       icon: <CgGym size={24} />,
-      href: "/admin/Clubs",
+      href: "/admin/clubs",
       label: "باشگاه ها",
     },
     {
