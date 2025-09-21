@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import ClubPanelLayout from "@/layouts/ClubPanelLayout";
 import {
   AddUserHeader,
   FormActions,
@@ -12,7 +11,7 @@ export default function AddUserPage() {
   const [selectedGender, setSelectedGender] = useState("male");
 
   return (
-    <ClubPanelLayout>
+    <>
       <AddUserHeader />
       <form className="p-4 sm:p-6 space-y-6">
         <ProfileImageUpload />
@@ -22,6 +21,6 @@ export default function AddUserPage() {
         />
         <FormActions />
       </form>
-    </ClubPanelLayout>
+    </>
   );
 }

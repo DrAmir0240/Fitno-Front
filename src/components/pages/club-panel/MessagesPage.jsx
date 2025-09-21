@@ -1,8 +1,6 @@
 "use client"
 import { SearchBar } from "@/components/navigation"
 import MessagesList from "@/components/templates/profile/messages/MessagesList";
-
-import ClubPanelLayout from "@/layouts/ClubPanelLayout"
 import { useState } from "react";
 import { MessagesContent } from "@/components/templates/club-panel/messages";
 import PageHeader from "@/components/shared/PageHeader";
@@ -125,7 +123,7 @@ function MessagesPage() {
   ];
 
   return (
-    <ClubPanelLayout>
+    <>
       <PageHeader
         title="لیست پیام ها"
         buttonText="پیام جدید"
@@ -133,7 +131,7 @@ function MessagesPage() {
       />
       <SearchBar placeholder="جستجو کنید..." />
       <MessagesContent tabsData={tabsData} />
-    </ClubPanelLayout>
+    </>
   )
 }
 

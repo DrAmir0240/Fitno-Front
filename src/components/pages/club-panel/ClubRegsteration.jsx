@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { Button, Input } from "@/components/ui";
-import ClubPanelLayout from "@/layouts/ClubPanelLayout";
 import {
   GalleryUploader,
   ImageUploader,
@@ -33,7 +32,7 @@ export default function ClubRegistrationPage() {
   
 
   return (
-    <ClubPanelLayout>
+    <>
       <RegisterHeader />
 
       <form className="p-6 space-y-8">
@@ -88,6 +87,6 @@ export default function ClubRegistrationPage() {
           </Button>
         </div>
       </form>
-    </ClubPanelLayout>
+    </>
   );
 }

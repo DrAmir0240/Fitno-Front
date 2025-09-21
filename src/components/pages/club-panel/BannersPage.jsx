@@ -2,7 +2,6 @@
 import { SearchBar } from "@/components/navigation";
 import PageHeader from "@/components/shared/PageHeader";
 import { AddBannerModal, BannerItem } from "@/components/templates/club-panel/banners";
-import ClubPanelLayout from "@/layouts/ClubPanelLayout";
 import { useState } from "react";
 
 
@@ -14,7 +13,7 @@ function BannersPage() {
   };
 
   return (
-    <ClubPanelLayout>
+    <>
       <PageHeader
         title="مدیریت بنر ها"
         buttonText="بنر جدید"
@@ -34,7 +33,7 @@ function BannersPage() {
         open={isOpen} 
         onOpenChange={setIsOpen} 
       />
-    </ClubPanelLayout>
+    </>
   );
 }
 

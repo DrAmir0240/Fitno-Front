@@ -1,9 +1,7 @@
 "use client";
-
 import { BreadCrumb } from "@/components/shared";
 import MessagesList from "@/components/templates/profile/messages/MessagesList";
 import { ReusableTabs } from "@/components/ui/tabs";
-import { UserLayout } from "@/layouts";
 import { useState } from "react";
 
 const MessagesPage = () => {
@@ -106,21 +104,19 @@ const MessagesPage = () => {
   ];
 
   return (
-    <UserLayout>
-      <div>
-        <BreadCrumb title="پیام ها" />
-        <div className="bg-[#EFEFEF] p-2 py-4 rounded-3xl">
-          <div className="flex w-full justify-start">
-            <ReusableTabs
-              tabs={tabsData}
-              defaultValue="all"
-              className="w-full px-3"
-              tabsListClassName="bg-[#D6D6D6] min-w-[200px] gap-3 mx-auto rounded-full flex-row-reverse"
-            />
-          </div>
+    <div>
+      <BreadCrumb title="پیام ها" />
+      <div className="bg-[#EFEFEF] p-2 py-4 rounded-3xl">
+        <div className="flex w-full justify-start">
+          <ReusableTabs
+            tabs={tabsData}
+            defaultValue="all"
+            className="w-full px-3"
+            tabsListClassName="bg-[#D6D6D6] min-w-[200px] gap-3 mx-auto rounded-full flex-row-reverse"
+          />
         </div>
       </div>
-    </UserLayout>
+    </div>
   );
 };
 

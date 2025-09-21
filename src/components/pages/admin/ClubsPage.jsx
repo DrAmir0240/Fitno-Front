@@ -1,6 +1,5 @@
 import PageHeader from "@/components/shared/PageHeader";
 import { ClubsList } from "@/components/templates/admin/clubs";
-import AdminLayout from "@/layouts/AdminLayout";
 
 function ClubsPage() {
   const clubsData = [
@@ -31,7 +30,7 @@ function ClubsPage() {
   ];
 
   return (
-    <AdminLayout>
+    <>
       <PageHeader
         title="لیست باشگاه ها"
         buttonText="باشگاه جدید"
@@ -39,7 +38,7 @@ function ClubsPage() {
       />
       
       <ClubsList clubs={clubsData} />
-    </AdminLayout>
+    </>
   );
 }
 

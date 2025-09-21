@@ -1,8 +1,3 @@
-import React from 'react';
-import { UserLayout } from '@/layouts';
-import { Button } from '@/components/ui';
-import { RxDownload } from "react-icons/rx";
-import { GoArrowDown , GoArrowUp   } from "react-icons/go";
 import { BreadCrumb } from '@/components/shared';
 import TransactionsList from '@/components/templates/profile/transactions/transactionsList';
 
@@ -81,7 +76,6 @@ const TransactionsPage = () => {
   ];
 
   return (
-    <UserLayout >
         <div className="min-h-screen  font-sans" >
      <BreadCrumb title="تراکنش ها" />
 
@@ -94,7 +88,6 @@ const TransactionsPage = () => {
       <TransactionsList transactions={transactions} />
       </div>
     </div>
-    </UserLayout>
   );
 };
 

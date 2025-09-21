@@ -1,8 +1,6 @@
 import { SearchBar } from "@/components/navigation";
 import PageHeader from "@/components/shared/PageHeader";
 import { UserTable } from "@/components/templates/admin/users";
-import AdminLayout from "@/layouts/AdminLayout";
-
 
 const sampleUsers = [
   {
@@ -54,7 +52,7 @@ const sampleUsers = [
 
 function UsersPage() {
   return (
-    <AdminLayout>
+    <>
       <PageHeader
         title="لیست کاربران"
         buttonText="کاربر جدید"
@@ -64,7 +62,7 @@ function UsersPage() {
       <SearchBar placeholder="جستجو کنید..." />
 
       <UserTable users={sampleUsers} />
-    </AdminLayout>
+    </>
   );
 }
 

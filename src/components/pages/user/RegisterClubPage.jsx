@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { BreadCrumb } from "@/components/shared";
 import { Button } from "@/components/ui";
-import { UserLayout } from "@/layouts";
 import { DiscountSection, PlanDetails, PlanSelection } from "@/components/templates/profile/register-club";
 
 const RegisterClubPage = () => {
@@ -14,7 +13,6 @@ const RegisterClubPage = () => {
   };
 
   return (
-    <UserLayout>
       <div>
         <BreadCrumb title="ثبت نام در باشگاه" />
 
@@ -35,7 +33,6 @@ const RegisterClubPage = () => {
           پرداخت
         </Button>
       </div>
-    </UserLayout>
   );
 };
 

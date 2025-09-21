@@ -1,4 +1,3 @@
-import ClubPanelLayout from "@/layouts/ClubPanelLayout";
 import { SearchBar } from "@/components/navigation";
 import PageHeader from "@/components/shared/PageHeader";
 import ServicesList from "@/components/templates/club-panel/services/ServicesList";
@@ -25,7 +24,7 @@ function ServicesPage() {
     },
   ];
   return (
-    <ClubPanelLayout>
+    <>
       <PageHeader
         title="لیست سانس های باشگاه ایران مهر"
         buttonText="سانس جدید"
@@ -33,7 +32,7 @@ function ServicesPage() {
       />
       <SearchBar placeholder="جستحو کنید ..." />
       <ServicesList sessions={sessions} />
-    </ClubPanelLayout>
+    </>
   );
 }
 

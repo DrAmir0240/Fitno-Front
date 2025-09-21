@@ -1,4 +1,3 @@
-import AdminLayout from "@/layouts/AdminLayout";
 import { SearchBar } from "@/components/navigation";
 import { FiCheckCircle } from "react-icons/fi";
 import { FilterButtons, StatsCards, TransactionsTable } from "@/components/templates/admin/transactions";
@@ -28,7 +27,7 @@ const TransactionsPage = () => {
   ];
 
   return (
-    <AdminLayout>
+    <>
       <StatsCards />
     
       <SearchBar placeholder="جستجو کنید..." />
@@ -36,7 +35,7 @@ const TransactionsPage = () => {
       <FilterButtons />
       
       <TransactionsTable transactions={transactions} />
-    </AdminLayout>
+    </>
   );
 };
 

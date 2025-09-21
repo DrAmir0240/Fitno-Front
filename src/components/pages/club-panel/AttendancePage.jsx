@@ -1,6 +1,4 @@
-import ClubPanelLayout from "@/layouts/ClubPanelLayout";
 import { AttendanceGrid, AttendanceHeader } from "@/components/templates/club-panel/Attendance";
-
 
 function AttendancePage() {
   const inventoryItems = [
@@ -21,12 +19,10 @@ function AttendancePage() {
   ];
 
   return (
-    <ClubPanelLayout>
       <div className=" mx-auto">
         <AttendanceHeader />
         <AttendanceGrid items={inventoryItems} />
       </div>
-    </ClubPanelLayout>
   );
 }
 

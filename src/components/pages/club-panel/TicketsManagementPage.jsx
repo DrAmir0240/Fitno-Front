@@ -1,6 +1,7 @@
-import React from "react";
-import ClubPanelLayout from "@/layouts/ClubPanelLayout";
-import { TicketHeader, TicketList } from "@/components/templates/club-panel/tickets";
+import {
+  TicketHeader,
+  TicketList,
+} from "@/components/templates/club-panel/tickets";
 
 function TicketsManagementPage() {
   const sampleTickets = [
@@ -10,14 +11,12 @@ function TicketsManagementPage() {
   ];
 
   return (
-    <ClubPanelLayout>
-      <div className="bg-[#F2F2F2] rounded-4xl p-4 text-center">
-        <h1 className="font-bold text-xl">مدیریت تیکت ها</h1>
-        
-        <TicketHeader />
-        <TicketList tickets={sampleTickets} />
-      </div>
-    </ClubPanelLayout>
+    <div className="bg-[#F2F2F2] rounded-4xl p-4 text-center">
+      <h1 className="font-bold text-xl">مدیریت تیکت ها</h1>
+
+      <TicketHeader />
+      <TicketList tickets={sampleTickets} />
+    </div>
   );
 }
 

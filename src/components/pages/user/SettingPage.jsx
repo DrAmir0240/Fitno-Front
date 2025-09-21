@@ -1,6 +1,4 @@
-"use client"
 import { Button, Input } from "@/components/ui"
-import { UserLayout } from "@/layouts"
 import Image from "next/image";
 import { FaArrowLeftLong, FaPlus } from "react-icons/fa6";
 import { useRef, useState } from "react";
@@ -25,7 +23,7 @@ function SettingPage() {
   };
 
   return (
-    <UserLayout mainClass="p-0 pb-5" >
+    <div mainClass="p-0 pb-5" >
       <div className="   bg-[#289DFC] min-h-[167px] rounded-b-4xl ">
         <div className="text-white px-4 py-4 flex items-center justify-between mb-4">
           <div className="w-10"></div>
@@ -78,7 +76,7 @@ function SettingPage() {
             تایید
         </Button>
       </form>
-    </UserLayout>
+    </div>
   )
 }
 

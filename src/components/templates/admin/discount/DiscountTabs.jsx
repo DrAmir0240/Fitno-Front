@@ -31,7 +31,7 @@ const DiscountTabs = ({ discountCodes }) => {
         tabs={tabsData}
         defaultValue="active"
         className="w-full px-2 sm:px-3"
-        tabsListClassName="bg-[#D6D6D6] w-full sm:min-w-[200px] sm:max-w-md grid grid-cols-3 mx-auto rounded-full h-10 sm:h-12 text-xs sm:text-sm"
+        tabsListClassName=" w-full  gap-3 "
       />
     </div>
   );

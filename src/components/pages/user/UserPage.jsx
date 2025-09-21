@@ -1,13 +1,10 @@
 import SearchBar from "../../navigation/SearchBar";
 import UserMenu from "../../navigation/UserMenu";
 import Image from "next/image";
-
-import { UserLayout } from "@/layouts";
 import Header from "../../layout/userPanel/Header";
 
 const UserHomePage = () => {
   return (
-    <UserLayout>
      <div className="relative"> 
        
       
@@ -51,7 +48,6 @@ const UserHomePage = () => {
       />
       
      </div>
-    </UserLayout>
   );
 };
 

@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { ProfileImageUpload } from "@/components/templates/club-panel/add-user";
 import { Button } from "@/components/ui";
-import ClubPanelLayout from "@/layouts/ClubPanelLayout";
 import {
   ClubSettingFormFields,
   ProfileHeader,
@@ -11,7 +10,7 @@ import {
 function ClubSettingPage() {
   const [selectedType, setSelectedType] = useState("user");
   return (
-    <ClubPanelLayout>
+    <>
       <ProfileHeader />
       <form className="p-4 sm:p-6 space-y-6">
         <ProfileImageUpload />
@@ -25,7 +24,7 @@ function ClubSettingPage() {
           </Button>
         </div>
       </form>
-    </ClubPanelLayout>
+    </>
   );
 }
 

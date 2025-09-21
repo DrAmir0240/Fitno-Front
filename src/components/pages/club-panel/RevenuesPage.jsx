@@ -1,7 +1,6 @@
 
 import PageHeader from '@/components/shared/PageHeader'
 import { RevenueFilters, RevenueSummary, RevenueTable } from '@/components/templates/club-panel/revenues'
-import ClubPanelLayout from '@/layouts/ClubPanelLayout'
 
 function RevenuesPage() {
   const reports = [
@@ -77,7 +76,7 @@ function RevenuesPage() {
   ]
 
   return (
-    <ClubPanelLayout>
+    <>
   
       <PageHeader
         title="گزارش گیری درآمد ها"
@@ -87,7 +86,7 @@ function RevenuesPage() {
       <RevenueSummary reports={reports} />
       <RevenueFilters />
       <RevenueTable transactions={transactions} />
-    </ClubPanelLayout>
+    </>
   )
 }
 

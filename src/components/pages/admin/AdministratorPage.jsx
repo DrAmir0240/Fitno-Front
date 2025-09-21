@@ -3,9 +3,6 @@ import PageHeader from "@/components/shared/PageHeader";
 import { AdminSection } from "@/components/templates/admin/administrator";
 import { ClubsSection } from "@/components/templates/admin/administrator";
 
-import AdminLayout from "@/layouts/AdminLayout";
-
-
 function AdministratorPage() {
   const adminsData = [
     {
@@ -24,7 +21,7 @@ function AdministratorPage() {
   };
 
   return (
-    <AdminLayout>
+    <>
       <PageHeader title="افزودن مدیر جدید" showButton={false} />
 
       <AdminSection admins={adminsData} onAddAdmin={handleAddAdmin} />
@@ -32,7 +29,7 @@ function AdministratorPage() {
       <PageHeader title="افزودن باشگاه جدید" showButton={false} />
 
       <ClubsSection onAddClub={handleAddClub} />
-    </AdminLayout>
+    </>
   );
 }
 

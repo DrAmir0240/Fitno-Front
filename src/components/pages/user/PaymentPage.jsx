@@ -1,8 +1,6 @@
 import { BreadCrumb } from '@/components/shared';
-import { UserLayout } from '@/layouts';
 import { PaymentFooter, SelectedSessions } from '@/components/templates/profile/payment';
 import { DiscountSection } from '@/components/templates/profile/register-club';
-
 
 function PaymentPage() {
   const sessions = [
@@ -17,7 +15,7 @@ function PaymentPage() {
   ];
 
   return (
-    <UserLayout>
+    <>
       <BreadCrumb title="پرداخت" />
       
       <SelectedSessions sessions={sessions} />
@@ -27,7 +25,7 @@ function PaymentPage() {
       </div>
       
       <PaymentFooter />
-    </UserLayout>
+    </>
   );
 }
 

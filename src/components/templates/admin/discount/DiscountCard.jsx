@@ -45,15 +45,15 @@ const DiscountCard = ({ code }) => {
       {/* Desktop View */}
       <div className="hidden md:flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-            <LuChevronLeft className="w-5 h-5 text-gray-400" />
-          </button>
-          <button className="p-2 hover:bg-red-100 rounded-lg transition-colors group">
-            <LuTrash2 className="w-4 h-4 text-gray-400 group-hover:text-red-500" />
-          </button>
-          <button className="p-2 hover:bg-blue-100 rounded-lg transition-colors group">
-            <FiEdit className="w-4 h-4 text-gray-400 group-hover:text-blue-500" />
-          </button>
+          <Button variant="link" size="icon" className="hover:bg-gray-200 w-7 h-7 rounded-lg">
+            <LuChevronLeft size={20} className="text-gray-400" />
+          </Button>
+          <Button variant="link" size="icon" className="hover:bg-red-100 w-7 h-7 rounded-lg">
+            <LuTrash2 size={16} className="text-gray-400 hover:text-red-500" />
+          </Button>
+          <Button variant="link" size="icon" className="hover:bg-blue-100 w-7 h-7 rounded-lg">
+            <FiEdit size={16} className="text-gray-400 hover:text-blue-500" />
+          </Button>
         </div>
 
         <div className="flex-1 px-4">
