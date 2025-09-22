@@ -8,6 +8,7 @@ const Header = ({ className = "" }) => {
         <Link href="/profile" >profile</Link>
         <Link href="/club-panel" >club</Link>
         <Link href="/admin/users" >admin</Link>
+        <Link href="/auth" >register | login</Link>
       </div>
     </header>
   );
