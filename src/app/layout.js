@@ -1,6 +1,6 @@
-import { SidebarProvider } from "@/components/context/SidebarContext";
 import { peyda } from "../utils/fonts";
 import "./globals.css";
+import TanstackQueryProvider from "@/provider/TanstackQueryProvider";
 
 export const metadata = {
   title: "Fitno",
@@ -10,7 +10,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
-      <body className={peyda.className}>{children}</body>
+      <body className={peyda.className}>
+         <TanstackQueryProvider>
+        {children}
+        </TanstackQueryProvider>
+        </body>
     </html>
   );
 }

@@ -20,7 +20,7 @@ import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useSidebar } from "@/components/context/SidebarContext";
+import { useSidebar } from "@/context/SidebarContext";
 import Image from "next/image";
 
 const menuItems = [

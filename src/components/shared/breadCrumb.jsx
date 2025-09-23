@@ -3,7 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { IoIosArrowBack } from "react-icons/io";
 import { LuMenu } from 'react-icons/lu';
-import { useSidebar } from '../context/SidebarContext';
+import { useSidebar } from '../../context/SidebarContext';
 
 
 export const BreadCrumb = ({ title, onBack }) => {

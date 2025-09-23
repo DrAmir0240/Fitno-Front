@@ -2,7 +2,7 @@ import MobileMenu from "@/components/layout/userPanel/MobileMenu";
 import Header from "@/components/layout/userPanel/Header";
 import { cn } from "@/lib/utils";
 import { Sidebar } from "@/components/layout/userPanel/Sidebar";
-import { SidebarProvider } from "@/components/context/SidebarContext";
+import { SidebarProvider } from "@/context/SidebarContext";
 
 const UserLayout = ({ children, mainClass }) => {
   return (

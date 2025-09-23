@@ -1,1 +1,2 @@
-export * from "./breadCrumb.jsx"
+export * from "./breadCrumb"
+export {StatsCard} from "./StatsCard"

@@ -16,26 +16,24 @@ export default function AuthPage() {
           />
           <div className="absolute inset-0 bg-[#289DFC30]"></div>
         </div>
-        
       </div>
-       <div className="absolute bottom-10 left-0 right-0 z-[999] p-6">
+      <div className="absolute bottom-10 left-0 right-0 z-[999] p-6">
         <div className="max-w-[450px] mx-auto flex flex-col gap-4">
-          <Button className="w-full " >
+          <Button href="/auth/register" className="w-full ">
             ثبت نام
           </Button>
-          <Button className="w-full" >
+          <Button href="/auth/login" className="w-full">
             ورود
           </Button>
-          <Button 
+          <Button
             endIcon={<FcGoogle size={18} />}
-            className="w-full "
-            variant="outline"
+            className="w-full hover:text-black"
+            variant="outline" 
           >
             ورود با اکانت گوگل
           </Button>
         </div>
       </div>
-      
     </div>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 import { LuMenu } from "react-icons/lu";
 import { Button } from "@/components/ui/button";
-import { useSidebar } from "@/components/context/SidebarContext";
+import { useSidebar } from "@/context/SidebarContext";
 
 export default function Header() {
   const { openSidebar } = useSidebar();

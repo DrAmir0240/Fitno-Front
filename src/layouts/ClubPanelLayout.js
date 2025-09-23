@@ -1,5 +1,5 @@
 import "@/app/globals.css";
-import { SidebarProvider } from "@/components/context/SidebarContext";
+import { SidebarProvider } from "@/context/SidebarContext";
 import Header from "@/components/layout/clubPanel/Header";
 import Sidebar from "@/components/layout/clubPanel/Sidebar";
 import MobileMenu from "@/components/layout/userPanel/MobileMenu";

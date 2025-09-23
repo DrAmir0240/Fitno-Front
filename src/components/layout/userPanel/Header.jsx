@@ -1,5 +1,5 @@
 "use client"
-import { useSidebar } from "@/components/context/SidebarContext";
+import { useSidebar } from "@/context/SidebarContext";
 import { HiUser } from "react-icons/hi2";
 import { LuMenu } from "react-icons/lu";
 import { TbWallet } from "react-icons/tb";
