@@ -1,23 +1,22 @@
 "use client";
-
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Button, Input, Select } from "@/components/ui";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import { useRegister } from "@/services/mutation/auth";
+import { useRouter } from "next/navigation";
 
 export default function RegisterPage() {
   const { mutate: registerUser, isPending } = useRegister();
-
+const router = useRouter()
   const {
     register,
     handleSubmit,
     watch,
-    control,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm({
     defaultValues: {
-      full_name: "",
+      fullName: "",
       phone: "",
       email: "",
       national_code: "",
@@ -42,7 +41,7 @@ export default function RegisterPage() {
     registerUser(apiData, {
       onSuccess: (response) => {
         console.log("ثبت نام موفق:", response);
-
+router.push("/auth/login")
         reset();
       },
       onError: (error) => {
@@ -144,6 +143,16 @@ export default function RegisterPage() {
               },
             })}
             error={errors.national_code?.message}
+            required
+          />
+           <Input
+            label="شهر"
+            type="text"
+            className="z-10"
+            {...register("city", {
+              required: "شهر الزامی است",
+            })}
+            error={errors.city?.message}
             required
           />
 
