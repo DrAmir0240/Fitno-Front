@@ -1,12 +1,12 @@
 import Cookies from "js-cookie";
 
-const setCookie = (tokens) => {
-  const { access_token, refresh_token } = tokens;
+const setCookie = (access_token , refresh_token ) => {
+
   const isSecure = window.location.protocol === 'https:';
 
   if (typeof access_token === 'string' && access_token.trim() !== '') {
     Cookies.set('access_token', access_token, {
-      expires: 1, // 1 روز
+      expires: 1,
       path: '/',
       secure: isSecure,
       sameSite: 'Strict'
@@ -15,7 +15,7 @@ const setCookie = (tokens) => {
 
   if (typeof refresh_token === 'string' && refresh_token.trim() !== '') {
     Cookies.set('refresh_token', refresh_token, {
-      expires: 30, // 30 روز
+      expires: 30,
       path: '/',
       secure: isSecure,
       sameSite: 'Strict'

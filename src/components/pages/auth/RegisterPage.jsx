@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 export default function RegisterPage() {
   const { mutate: registerUser, isPending } = useRegister();
-const router = useRouter()
+ const router = useRouter()
   const {
     register,
     handleSubmit,
@@ -40,7 +40,7 @@ const router = useRouter()
 
     registerUser(apiData, {
       onSuccess: (response) => {
-        console.log("ثبت نام موفق:", response);
+        console.log(response);
 router.push("/auth/login")
         reset();
       },
