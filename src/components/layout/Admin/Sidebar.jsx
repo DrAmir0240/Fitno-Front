@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import {  PiSignOut , PiUsers } from "react-icons/pi";
+import { PiSignOut, PiUsers } from "react-icons/pi";
 import { GrTransaction } from "react-icons/gr";
 import { MdOutlineAdminPanelSettings } from "react-icons/md";
 import { CgGym } from "react-icons/cg";
@@ -18,7 +18,6 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   const links = [
-   
     {
       icon: <PiUsers size={24} />,
       href: "/admin/users",
@@ -49,7 +48,6 @@ export default function Sidebar() {
       href: "/admin/commission",
       label: "کمیسیون ها",
     },
-     
   ];
 
   const SidebarContent = () => (

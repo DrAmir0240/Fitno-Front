@@ -1,13 +1,8 @@
 import React from "react";
-import {
-  HiQuestionMarkCircle,
-  HiGift,
-} from "react-icons/hi2";
+import { HiQuestionMarkCircle, HiGift } from "react-icons/hi2";
 import { PiChatsThin } from "react-icons/pi";
 import { GrBasket } from "react-icons/gr";
 import { RiHome3Line } from "react-icons/ri";
-
-
 
 const MobileMenu = ({ className = "" }) => {
   const menuItems = [
@@ -55,7 +50,7 @@ const MobileMenu = ({ className = "" }) => {
 
   return (
     <div
-     className={`fixed bottom-0 inset-x-0 rounded-t-[35px] max-w-[700px] m-auto  !bg-gray-300 shadow-lg z-50 ${className}`}
+      className={`fixed bottom-0 inset-x-0 rounded-t-[35px] max-w-[700px] m-auto  !bg-gray-300 shadow-lg z-50 ${className}`}
     >
       <div className="flex justify-around items-end py-2 px-4">
         {menuItems.map((item) => (
