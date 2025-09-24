@@ -11,14 +11,10 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { LiaMoneyBillWaveSolid } from "react-icons/lia";
 import {
   TbUserPlus,
-  TbReportAnalytics,
-  TbListSearch
 } from "react-icons/tb";
 import { HiOutlineMail } from "react-icons/hi";
 import { IoTicketOutline } from "react-icons/io5";
 import { IoImagesOutline } from "react-icons/io5";
-
-import { BiBasket } from "react-icons/bi";
 import { CgGym } from "react-icons/cg";
 import { PiUserCirclePlus, PiSignOut } from "react-icons/pi";
 
@@ -64,34 +60,14 @@ export default function Sidebar() {
       label: "مدیریت بنر ها",
     },
     {
-      icon: <RiCustomerService2Line size={24} />,
-      href: "/club-panel/support",
-      label: " پشتیبانی",
-    },
-    {
-      icon: <BiBasket size={24} />,
-      href: "/club-panel/payment",
-      label: " پرداخت",
-    },
-    {
       icon: <CgGym size={24} />,
       href: "/club-panel/attendance",
       label: " ورود و خروج",
     },
     {
-      icon: <TbReportAnalytics size={24} />,
-      href: "/club-panel/report",
-      label: "گزارش عملکرد",
-    },
-    {
       icon: <HiOutlineMail size={24} />,
       href: "/club-panel/messages",
       label: "پیام ها",
-    },
-    {
-      icon: <TbListSearch size={24} />,
-      href: "/club-panel/history",
-      label: "تاریخچه",
     },
   ];
 

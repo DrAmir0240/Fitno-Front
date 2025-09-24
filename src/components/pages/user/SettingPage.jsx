@@ -79,7 +79,7 @@ function SettingPage() {
         />
       </div>
 
-      <form className="mt-5 flex flex-col gap-5 px-8">
+      <form className="mt-5 flex flex-col gap-5 px-4">
         <Input label="نام و نام خانوادگی" type="text" className="rounded-2xl" />
         <Input
           label="شماره همراه / ایمیل"
