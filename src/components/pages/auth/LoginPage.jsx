@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
 export default function LoginPage() {
-  const router = useRouter()
+  const router = useRouter();
   const { mutate: loginUser, isPending } = useLogin();
   const {
     register,
@@ -25,7 +25,6 @@ export default function LoginPage() {
         console.log(response);
         router.push("/profile");
         reset();
-        setCookie(response.data.access ,response.data.refresh)
       },
       onError: (error) => {
         console.log(error);

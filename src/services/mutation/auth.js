@@ -6,7 +6,7 @@ const useRegister = () => {
   return useMutation({ mutationFn });
 };
 const useLogin = () => {
-  const mutationFn = (data) => api.post("accounts/customer/login/", data);
+  const mutationFn = (data) => api.post("accounts/login/", data);
   return useMutation({ mutationFn });
 };
 

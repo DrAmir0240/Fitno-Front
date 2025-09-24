@@ -1,3 +1,4 @@
+import AuthContextProvider from "@/context/authContext";
 import { peyda } from "../utils/fonts";
 import "./globals.css";
 import TanstackQueryProvider from "@/provider/TanstackQueryProvider";
@@ -12,7 +13,9 @@ export default function RootLayout({ children }) {
     <html lang="fa" dir="rtl">
       <body className={peyda.className}>
          <TanstackQueryProvider>
+             <AuthContextProvider>
         {children}
+        </AuthContextProvider>
         </TanstackQueryProvider>
         </body>
     </html>

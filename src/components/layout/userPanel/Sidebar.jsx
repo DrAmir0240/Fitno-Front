@@ -22,6 +22,7 @@ import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useSidebar } from "@/context/SidebarContext";
 import Image from "next/image";
+import { useAuth } from "@/context/authContext";
 
 const menuItems = [
   { name: "صفحه اصلی", href: "/", icon: RiHome6Line },
@@ -52,6 +53,7 @@ const menuItems = [
 export function Sidebar() {
   const { isOpen, closeSidebar } = useSidebar();
   const pathname = usePathname();
+  const { user } = useAuth();
 
   return (
     <>
@@ -72,8 +74,7 @@ export function Sidebar() {
                   className="z-10 rounded-full border-4 border-white p-0 object-cover"
                 />
                 <div>
-                  <h3 className="text-base font-semibold"> هلیا</h3>
-                  <p className="text-xs font-medium text-gray-300"> نام شهر</p>
+                  <h3 className="text-base font-semibold"> {user?.name}</h3>
                 </div>
               </div>
               <Button variant="ghost" size="icon" onClick={closeSidebar}>
