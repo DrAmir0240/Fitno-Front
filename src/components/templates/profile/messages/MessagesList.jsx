@@ -5,7 +5,6 @@ import { PiPencilSimple, PiTrash } from "react-icons/pi";
 import { TbMessageChatbot } from "react-icons/tb";
 
 export default function MessagesList({ messages, onEdit, onDelete, error }) {
-  // اگر خطای ۴۰۴ دریافت شد
   if (error?.status === 404) {
     return (
       <div className="bg-white rounded-xl p-8 text-center">

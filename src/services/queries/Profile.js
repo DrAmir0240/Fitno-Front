@@ -49,6 +49,15 @@ const useGetPlatformMessages = () => {
     queryFn,
   });
 };
+const useGetTickets = () => {
+  const queryFn = () =>
+    api.get("/communications/customer/tickets/");
+  const queryKey = ["tickets"];
+  return useQuery({
+    queryKey,
+    queryFn,
+  });
+};
 
 export {
   useAuthStatus,
@@ -56,4 +65,5 @@ export {
   useGetServices,
   useGetGymMessages,
   useGetPlatformMessages,
+  useGetTickets
 };
