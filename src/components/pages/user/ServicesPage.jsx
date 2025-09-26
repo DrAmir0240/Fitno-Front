@@ -1,32 +1,16 @@
+"use client"
 import { BreadCrumb } from "@/components/shared";
 import { SearchBar } from "@/components/navigation";
 import {
   FilterButtons,
   SessionsList,
 } from "@/components/templates/profile/services";
-import { Button } from "@/components/ui";
+import { useGetServices } from "@/services/queries/Profile";
 
 export default function ServicesPage() {
-  const sessions = [
-    {
-      id: 1,
-      title: "سانس دوماهه",
-      sessionsCount: "12 جلسه",
-      fee: "۱۲/۰۰۰/۰۰۰ تومان",
-    },
-    {
-      id: 2,
-      title: "سانس دوماهه",
-      sessionsCount: "12 جلسه",
-      fee: "۱۲/۰۰۰/۰۰۰ تومان",
-    },
-    {
-      id: 3,
-      title: "سانس دوماهه",
-      sessionsCount: "12 جلسه",
-      fee: "۱۲/۰۰۰/۰۰۰ تومان",
-    },
-  ];
+  const {data} = useGetServices()
+  console.log(data)
+  const sessions = data?.data?.results
 
   return (
     <div>
@@ -45,11 +29,7 @@ export default function ServicesPage() {
       {/* Services List */}
       <SessionsList sessions={sessions} />
 
-      <div className="mt-8">
-        <Button className="w-full h-14 text-xl font-semibold shadow-md rounded-2xl">
-          پرداخت
-        </Button>
-      </div>
+     
     </div>
   );
 }

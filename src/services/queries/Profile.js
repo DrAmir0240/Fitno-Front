@@ -2,7 +2,7 @@ import api from "@/config/api";
 import { useQuery } from "@tanstack/react-query";
 
 const useAuthStatus = () => {
-  const queryFn = () => api.get("/accounts/status/" , {withCredentials : true});
+  const queryFn = () => api.get("/accounts/status/", { withCredentials: true });
   const queryKey = ["user"];
   const { data, error, isPending, isLoading, refetch } = useQuery({
     queryKey,
@@ -23,5 +23,16 @@ const useGetGyms = () => {
 
   return { data, error, isPending, isLoading, refetch };
 };
+const useGetServices = () => {
+  const queryFn = () => api.get("/gyms/customer/memberships/");
+  const queryKey = ["services"];
+  const { data, error, isPending, isLoading, refetch } = useQuery({
+    queryKey,
+    queryFn,
+    retry: false,
+  });
 
-export {useAuthStatus ,useGetGyms}
+  return { data, error, isPending, isLoading, refetch };
+};
+
+export { useAuthStatus, useGetGyms, useGetServices };
