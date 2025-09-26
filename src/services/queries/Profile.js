@@ -12,5 +12,16 @@ const useAuthStatus = () => {
 
   return { data, error, isPending, isLoading, refetch };
 };
+const useGetGyms = () => {
+  const queryFn = () => api.get("/gyms/customer/gyms/");
+  const queryKey = ["gyms"];
+  const { data, error, isPending, isLoading, refetch } = useQuery({
+    queryKey,
+    queryFn,
+    retry: false,
+  });
 
-export {useAuthStatus}
+  return { data, error, isPending, isLoading, refetch };
+};
+
+export {useAuthStatus ,useGetGyms}
