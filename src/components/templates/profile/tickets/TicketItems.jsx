@@ -1,11 +1,14 @@
 "use client"
-import React from "react";
+import React, { useState } from "react";
 import { FiPlus } from "react-icons/fi";
 import { Button } from "@/components/ui";
 import { useGetTickets } from "@/services/queries/Profile";
 import { formatToJalali } from "@/utils/formatData";
+import TicketModal from "./TicketModal";
 
 function TicketItems() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
 const {data} = useGetTickets()
 const tickets = data?.data?.results
 
@@ -14,7 +17,11 @@ const tickets = data?.data?.results
       <div className="max-w-5xl mx-auto ">
         {/* Header */}
         <div className="flex items-center justify-end mb-4 sm:mb-5 mx-2 sm:mx-0">
-          <Button endIcon={<FiPlus />} className="bg-gradient-to-r from-blue-600 to-purple-600 text-sm sm:text-base">
+         <Button 
+            endIcon={<FiPlus />} 
+            className="bg-gradient-to-r from-blue-600 to-purple-600 text-sm sm:text-base"
+            onClick={() => setIsModalOpen(true)}
+          >
             تیکت جدید
           </Button>
         </div>
@@ -96,13 +103,19 @@ const tickets = data?.data?.results
 
       
         <div className="sm:hidden fixed bottom-6 left-6 z-10">
-          <Button 
+         <Button 
             size="icon" 
             className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg"
-            endIcon={<FiPlus size={18} />}
+            onClick={() => setIsModalOpen(true)}
           >
+            <FiPlus size={18} />
           </Button>
         </div>
+
+         <TicketModal
+          open={isModalOpen}
+          onOpenChange={setIsModalOpen}
+        />
       </div>
     </div>
   );

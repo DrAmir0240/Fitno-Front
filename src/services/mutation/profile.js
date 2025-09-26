@@ -18,5 +18,19 @@ const useUpgradeProfile = () => {
     },
   });
 };
+const useCreateTicket = () => {
+  const queryClient = useQueryClient();
+  const mutationFn = (data) => api.post("/communications/customer/tickets/", data);
+  return useMutation({
+    mutationFn,
+    onSuccess: (response) => {
+      console.log(response);
+     queryClient.invalidateQueries({ queryKey: ["tickets"] });
+    },
+    onError: (error) => {
+      console.log(error);
+    },
+  });
+};
 
-export {useUpgradeProfile}
+export {useUpgradeProfile , useCreateTicket}
