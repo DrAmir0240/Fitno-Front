@@ -38,7 +38,6 @@ const useGetGymMessages = () => {
     queryKey,
     queryFn,
   });
-
 };
 const useGetPlatformMessages = () => {
   const queryFn = () =>
@@ -50,9 +49,17 @@ const useGetPlatformMessages = () => {
   });
 };
 const useGetTickets = () => {
-  const queryFn = () =>
-    api.get("/communications/customer/tickets/");
+  const queryFn = () => api.get("/communications/customer/tickets/");
   const queryKey = ["tickets"];
+  return useQuery({
+    queryKey,
+    queryFn,
+  });
+};
+
+const useGetTransactions = () => {
+  const queryFn = () => api.get("/payments/customer/transactions/");
+  const queryKey = ["transactions"];
   return useQuery({
     queryKey,
     queryFn,
@@ -65,5 +72,6 @@ export {
   useGetServices,
   useGetGymMessages,
   useGetPlatformMessages,
-  useGetTickets
+  useGetTickets,
+  useGetTransactions
 };

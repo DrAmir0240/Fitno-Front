@@ -1,79 +1,12 @@
+"use client"
 import { BreadCrumb } from '@/components/shared';
 import TransactionsList from '@/components/templates/profile/transactions/transactionsList';
+import { useGetTransactions } from '@/services/queries/Profile';
 
 const TransactionsPage = () => {
-  const transactions = [
-    {
-      id: 1,
-      type: 'increase',
-      title: 'افزایش موجودی',
-      amount: '400,323',
-      description: 'کسر از موجودی بابت پرداخت شهریه',
-      date: '1403/05/01',
-      time: '14:03:01',
-      status: 'موفق'
-    },
-    {
-      id: 2,
-      type: 'increase',
-      title: 'افزایش موجودی',
-      amount: '400,323',
-      description: 'کسر از موجودی بابت پرداخت شهریه',
-      date: '1403/05/01',
-      time: '14:03:01',
-      status: 'موفق'
-    },
-    {
-      id: 3,
-      type: 'decrease',
-      title: 'کاهش موجودی',
-      amount: '400,323',
-      description: 'کسر از موجودی بابت پرداخت شهریه',
-      date: '1403/05/01',
-      time: '14:03:01',
-      status: 'موفق'
-    },
-    {
-      id: 4,
-      type: 'decrease',
-      title: 'کاهش موجودی',
-      amount: '400,323',
-      description: 'کسر از موجودی بابت پرداخت شهریه',
-      date: '1403/05/01',
-      time: '14:03:01',
-      status: 'موفق'
-    },
-    {
-      id: 5,
-      type: 'decrease',
-      title: 'کاهش موجودی',
-      amount: '400,323',
-      description: 'کسر از موجودی بابت پرداخت شهریه',
-      date: '1403/05/01',
-      time: '14:03:01',
-      status: 'موفق'
-    },
-    {
-      id: 6,
-      type: 'increase',
-      title: 'افزایش موجودی',
-      amount: '400,323',
-      description: 'کسر از موجودی بابت پرداخت شهریه',
-      date: '1403/05/01',
-      time: '14:03:01',
-      status: 'موفق'
-    },
-    {
-      id: 7,
-      type: 'increase',
-      title: 'افزایش موجودی',
-      amount: '400,323',
-      description: 'کسر از موجودی بابت پرداخت شهریه',
-      date: '1403/05/01',
-      time: '14:03:01',
-      status: 'موفق'
-    }
-  ];
+  const {data} = useGetTransactions()
+  const transactions = data?.data
+  console.log(data)
 
   return (
         <div className="min-h-screen  font-sans" >
