@@ -1,4 +1,3 @@
-// app/clubs/page.jsx
 "use client";
 import { SearchBar } from "@/components/navigation";
 import { BreadCrumb } from "@/components/shared";
@@ -41,6 +40,7 @@ function ClubsPage() {
         club={selectedClub}
         open={isModalOpen}
         onOpenChange={setIsModalOpen}
+        showButton={true}
       />
     </>
   );

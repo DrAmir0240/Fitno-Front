@@ -1,8 +1,12 @@
-import { UserLayout } from "@/layouts";
+"use client"
 import { BreadCrumb } from "@/components/shared";
 import HistoryItems from "@/components/templates/profile/history/HistoryItems";
+import { useGetSignedGyms } from "@/services/queries/Profile";
 
 const HistoryPage = () => {
+  const {data} = useGetSignedGyms()
+  const gyms = data?.data
+  console.log(data)
   const historyItems = [
     {
       id: 1,
@@ -37,8 +41,7 @@ const HistoryPage = () => {
   return (
     <div className="min-h-screen  ">
       <BreadCrumb title="تاریخچه" />
-      {/* History Items */}
-      <HistoryItems historyItems={historyItems} />
+      <HistoryItems gyms={gyms} />
     </div>
   );
 };

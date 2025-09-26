@@ -65,6 +65,14 @@ const useGetTransactions = () => {
     queryFn,
   });
 };
+const useGetSignedGyms = () => {
+  const queryFn = () => api.get("/gyms/customer/gyms/signed/");
+  const queryKey = ["signedGyms"];
+  return useQuery({
+    queryKey,
+    queryFn,
+  });
+};
 
 export {
   useAuthStatus,
@@ -73,5 +81,6 @@ export {
   useGetGymMessages,
   useGetPlatformMessages,
   useGetTickets,
-  useGetTransactions
+  useGetTransactions,
+  useGetSignedGyms
 };
