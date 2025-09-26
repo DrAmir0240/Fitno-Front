@@ -67,7 +67,7 @@ export default function Sidebar() {
     {
       icon: <HiOutlineMail size={24} />,
       href: "/club-panel/messages",
-      label: "پیام ها",
+      label: "اطلاعیه ها",
     },
   ];
 

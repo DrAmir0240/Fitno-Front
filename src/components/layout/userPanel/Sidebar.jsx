@@ -37,7 +37,7 @@ const menuItems = [
   },
   { name: "تراکنش ها", href: "/profile/transactions", icon: GrTransaction },
   { name: "تاریخچه", href: "/profile/history", icon: MdOutlineHistory },
-  { name: "پیام ها", href: "/profile/messages", icon: TbMessages },
+  { name: "اطلاعیه ها", href: "/profile/messages", icon: TbMessages },
   {
     name: "لیست سانس ها",
     href: "/profile/services",

@@ -2,117 +2,41 @@
 import { BreadCrumb } from "@/components/shared";
 import MessagesList from "@/components/templates/profile/messages/MessagesList";
 import { ReusableTabs } from "@/components/ui/tabs";
-import { useState } from "react";
+import {
+  useGetGymMessages,
+  useGetPlatformMessages,
+} from "@/services/queries/Profile";
 
 const MessagesPage = () => {
-  const [allMessages, setAllMessages] = useState([
-    {
-      id: 1,
-      title: "عنوان پیام عمومی ۱",
-      description: "خلاصه‌ای از اطلاعیه سیستمی اینجا نوشته شد. ۱",
-      date: "1404/02/02",
-      time: "14:03",
-      type: "all",
-    },
-    {
-      id: 2,
-      title: "عنوان اطلاعیه",
-      description: "خلاصه‌ای از اطلاعیه سیستمی اینجا نوشته شد. ۲",
-      date: "1404/02/02",
-      time: "14:03",
-      type: "notification",
-    },
-    {
-      id: 3,
-      title: "عنوان پیام عمومی ۲",
-      description: "خلاصه‌ای از اطلاعیه سیستمی اینجا نوشته شد. ۳",
-      date: "1404/02/02",
-      time: "14:03",
-      type: "all",
-    },
-    {
-      id: 4,
-      title: "عنوان آموزش",
-      description: "خلاصه‌ای از اطلاعیه سیستمی اینجا نوشته شد. ۴",
-      date: "1404/02/02",
-      time: "14:03",
-      type: "learn",
-    },
-    {
-      id: 5,
-      title: "عنوان آموزش",
-      description: "خلاصه‌ای از اطلاعیه سیستمی اینجا نوشته شد. ۵",
-      date: "1404/02/02",
-      time: "14:03",
-      type: "learn",
-    },
-    {
-      id: 6,
-      title: "عنوان آموزش",
-      description: "خلاصه‌ای از اطلاعیه سیستمی اینجا نوشته شد. ۶",
-      date: "1404/02/02",
-      time: "14:03",
-      type: "learn",
-    },
-    {
-      id: 7,
-      title: "عنوان مالی",
-      description: "خلاصه‌ای از اطلاعیه سیستمی اینجا نوشته شد. ۷",
-      date: "1404/02/02",
-      time: "14:03",
-      type: "financial",
-    },
-  ]);
+  const { data: gym  ,error:gymError} = useGetGymMessages();
+  const { data: platform  , error:platformError} = useGetPlatformMessages();
+  const gymMessages = gym?.data?.results;
+  const platformMessages = platform?.data?.results;
+  console.log(gym);
 
   const tabsData = [
     {
-      value: "all",
-      label: "همه",
-      content: (
-        <MessagesList
-          messages={allMessages.filter((msg) => msg.type === "all")}
-        />
-      ),
+      value: "gym",
+      label: "باشگاه",
+      content: <MessagesList messages={gymMessages} error={gymError} />,
     },
     {
-      value: "notification",
-      label: "اطلاع رسانی",
-      content: (
-        <MessagesList
-          messages={allMessages.filter((msg) => msg.type === "notification")}
-        />
-      ),
-    },
-    {
-      value: "learn",
-      label: "آموزش",
-      content: (
-        <MessagesList
-          messages={allMessages.filter((msg) => msg.type === "learn")}
-        />
-      ),
-    },
-    {
-      value: "financial",
-      label: "مالی",
-      content: (
-        <MessagesList
-          messages={allMessages.filter((msg) => msg.type === "financial")}
-        />
-      ),
+      value: "platform",
+      label: "پلتفرم",
+      content: <MessagesList messages={platformMessages} error={platformError} />,
     },
   ];
 
   return (
     <div>
-      <BreadCrumb title="پیام ها" />
+      <BreadCrumb title="اطلاعیه ها" />
       <div className="bg-[#EFEFEF] p-2 py-4 rounded-3xl">
         <div className="flex w-full justify-start">
           <ReusableTabs
             tabs={tabsData}
-            defaultValue="all"
+            defaultValue="gym"
             className="w-full px-3"
-            tabsListClassName="bg-[#D6D6D6] min-w-[200px] gap-3 mx-auto rounded-full flex-row-reverse"
+            tabsListClassName="bg-[#D6D6D6] min-w-[150px] gap-3 mx-auto rounded-full flex-row-reverse"
           />
         </div>
       </div>

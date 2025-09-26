@@ -7,7 +7,6 @@ const useAuthStatus = () => {
   const { data, error, isPending, isLoading, refetch } = useQuery({
     queryKey,
     queryFn,
-    retry: false,
   });
 
   return { data, error, isPending, isLoading, refetch };
@@ -18,7 +17,6 @@ const useGetGyms = () => {
   const { data, error, isPending, isLoading, refetch } = useQuery({
     queryKey,
     queryFn,
-    retry: false,
   });
 
   return { data, error, isPending, isLoading, refetch };
@@ -29,10 +27,33 @@ const useGetServices = () => {
   const { data, error, isPending, isLoading, refetch } = useQuery({
     queryKey,
     queryFn,
-    retry: false,
   });
 
   return { data, error, isPending, isLoading, refetch };
 };
+const useGetGymMessages = () => {
+  const queryFn = () => api.get("/communications/customer/announcements/gym/");
+  const queryKey = ["gymMessages"];
+  return useQuery({
+    queryKey,
+    queryFn,
+  });
 
-export { useAuthStatus, useGetGyms, useGetServices };
+};
+const useGetPlatformMessages = () => {
+  const queryFn = () =>
+    api.get("/communications/customer/announcements/platform/");
+  const queryKey = ["platformMessages"];
+  return useQuery({
+    queryKey,
+    queryFn,
+  });
+};
+
+export {
+  useAuthStatus,
+  useGetGyms,
+  useGetServices,
+  useGetGymMessages,
+  useGetPlatformMessages,
+};

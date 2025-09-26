@@ -2,12 +2,55 @@ import { Button } from "@/components/ui/button";
 import { IoIosArrowBack } from "react-icons/io";
 import { PiPencilSimple, PiTrash } from "react-icons/pi";
 
-export default function MessagesList({ messages, onEdit, onDelete }) {
+import { TbMessageChatbot } from "react-icons/tb";
+
+export default function MessagesList({ messages, onEdit, onDelete, error }) {
+  // اگر خطای ۴۰۴ دریافت شد
+  if (error?.status === 404) {
+    return (
+      <div className="bg-white rounded-xl p-8 text-center">
+        <div className="flex flex-col items-center justify-center space-y-4">
+          <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
+            <TbMessageChatbot size={36} />
+          </div>
+          <h3 className="text-lg font-semibold text-gray-700">
+            پیامی یافت نشد
+          </h3>
+          <p className="text-gray-500 text-sm">
+            در حال حاضر هیچ پیامی برای نمایش وجود ندارد.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+
+   if (!messages) {
+    return (
+      <div className="bg-white rounded-xl p-8 text-center">
+        <div className="flex flex-col items-center justify-center space-y-4">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
+          <p className="text-gray-500">در حال بارگذاری پیام‌ها...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white rounded-xl">
       {messages.length === 0 ? (
-        <div className="p-4 text-center text-gray-500">
-          پیامی برای نمایش وجود ندارد.
+        <div className="p-8 text-center">
+          <div className="flex flex-col items-center justify-center space-y-4">
+            <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center">
+              <span className="text-2xl">💬</span>
+            </div>
+            <h3 className="text-lg font-semibold text-gray-700">
+              اطلاعیه ای وجود ندارد
+            </h3>
+            <p className="text-gray-500 text-sm">
+              هنوز هیچ پیامی دریافت نکرده‌اید.
+            </p>
+          </div>
         </div>
       ) : (
         messages.map((message) => (
@@ -17,7 +60,7 @@ export default function MessagesList({ messages, onEdit, onDelete }) {
           >
             <div className="flex flex-col-reverse md:flex-row items-center justify-between">
               <div className="flex items-center gap-2 w-full">
-                <div className="flex  items-center gap-3">
+                <div className="flex items-center gap-3">
                   <Button
                     variant="ghost"
                     size="icon"
@@ -59,14 +102,11 @@ export default function MessagesList({ messages, onEdit, onDelete }) {
                 <div className="flex flex-col gap-2 items-end">
                   <div className="flex">
                     <span className="text-xs sm:text-base font-medium text-gray-900">
-                      {message.title}
+                      {message?.gym_title}
                     </span>
                   </div>
                   <p className="text-xs sm:text-sm text-gray-500">
-                    {message.description}
-                  </p>
-                  <p className="text-xs text-gray-400">
-                    {message.date} | {message.time}
+                    {message?.message}
                   </p>
                 </div>
               </div>

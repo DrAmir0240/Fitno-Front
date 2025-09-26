@@ -8,7 +8,7 @@ import {
   MdDateRange,
 } from "react-icons/md";
 import { TiLocation } from "react-icons/ti";
-import Dialog from "@/components/ui/Dialog";
+import Dialog from "@/components/ui/dialog";
 
 export const ClubModal = ({ club, open, onOpenChange }) => {
   const translateDay = (day) => {
