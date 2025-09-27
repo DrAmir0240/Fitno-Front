@@ -1,33 +1,46 @@
-import * as React from "react"
-import { cn } from "@/lib/utils"
+import * as React from "react";
+import { cn } from "@/lib/utils";
 
 const Input = React.forwardRef(
-  ({ className, type, label, error, required, startIcon, endIcon, onEndIconClick, ...props }, ref) => {
-    const hasStartIcon = !!startIcon
-    const hasEndIcon = !!endIcon
+  (
+    {
+      className,
+      type,
+      label,
+      error,
+      required,
+      startIcon,
+      endIcon,
+      onEndIconClick,
+      ...props
+    },
+    ref
+  ) => {
+    const hasStartIcon = !!startIcon;
+    const hasEndIcon = !!endIcon;
 
     return (
       <div className="grid w-full gap-3">
         {label && (
-          <label 
-            htmlFor={props.id} 
+          <label
+            htmlFor={props.id}
             className={cn(
               "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
               error && "text-destructive"
             )}
           >
             {label}
-             {required && <span className="text-red-500 ml-1">*</span>}
+            {required && <span className="text-red-500 ml-1">*</span>}
           </label>
         )}
-        
+
         <div className="relative">
           {hasStartIcon && (
             <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">
               {startIcon}
             </div>
           )}
-          
+
           <input
             type={type}
             className={cn(
@@ -40,7 +53,7 @@ const Input = React.forwardRef(
             ref={ref}
             {...props}
           />
-          
+
           {hasEndIcon && (
             <button
               type="button"
@@ -55,14 +68,12 @@ const Input = React.forwardRef(
             </button>
           )}
         </div>
-        
-        {error && (
-          <p className="text-sm text-destructive">{error}</p>
-        )}
-      </div>
-    )
-  }
-)
-Input.displayName = "Input"
 
-export { Input }
+        {error && <p className="text-sm text-destructive">{error}</p>}
+      </div>
+    );
+  }
+);
+Input.displayName = "Input";
+
+export { Input };

@@ -82,5 +82,5 @@ export {
   useGetPlatformMessages,
   useGetTickets,
   useGetTransactions,
-  useGetSignedGyms
+  useGetSignedGyms,
 };

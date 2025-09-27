@@ -54,7 +54,7 @@ const Button = React.forwardRef(
   ) => {
     let Comp = asChild ? Slot : "button";
 
-    if (  href) {
+    if (href) {
       Comp = Link;
     } else if (asChild && href) {
       Comp = Link;
