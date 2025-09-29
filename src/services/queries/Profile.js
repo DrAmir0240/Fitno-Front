@@ -73,7 +73,17 @@ const useGetSignedGyms = () => {
     queryFn,
   });
 };
+const useGetNotifications = () => {
+  const queryFn = () => api.get("/communications/customer/notifications/");
+  const queryKey = ["signedGyms"];
+  return useQuery({
+    queryKey,
+    queryFn,
+  });
+};
 
+
+ 
 export {
   useAuthStatus,
   useGetGyms,
@@ -83,4 +93,5 @@ export {
   useGetTickets,
   useGetTransactions,
   useGetSignedGyms,
+  useGetNotifications
 };

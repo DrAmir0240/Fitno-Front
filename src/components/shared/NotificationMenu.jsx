@@ -2,6 +2,7 @@
 
 import { LuBell } from "react-icons/lu";
 import NavigationMenu from "@/components/ui/navigation-menu";
+import { Button } from "../ui";
 
 const NotificationMenu = ({ messageItems = [] }) => {
   const menuItems = [
@@ -16,7 +17,7 @@ const NotificationMenu = ({ messageItems = [] }) => {
       ),
       trigger: true,
       content: (
-        <div className="w-80 p-2">
+        <div className="max-w-80 p-2">
           <div className="flex justify-between items-center mb-4 p-2 border-b">
             {messageItems.some(item => item.unread) && (
               <span className="text-xs bg-red-500 text-white px-2 py-1 rounded-full">
@@ -56,9 +57,9 @@ const NotificationMenu = ({ messageItems = [] }) => {
           </div>
           
           <div className="mt-4 p-2 border-t">
-            <button className="w-full text-center text-sm text-blue-600 hover:text-blue-800 py-2">
+            <Button variant="link" className="w-full  text-blue-600 hover:text-blue-800 p-0">
               مشاهده همه پیام‌ها
-            </button>
+            </Button>
           </div>
         </div>
       )
@@ -68,7 +69,8 @@ const NotificationMenu = ({ messageItems = [] }) => {
   return (
     <NavigationMenu
       items={menuItems}
-      className="flex items-center"
+      className="flex items-center "
+      
     />
   );
 };
