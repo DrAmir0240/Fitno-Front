@@ -5,19 +5,6 @@ import { ChevronDown } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-const NavigationMenu = React.forwardRef(({ className, children, ...props }, ref) => (
-  <NavigationMenuPrimitive.Root
-    ref={ref}
-    className={cn(
-      "relative z-10 flex max-w-max flex-1 items-center justify-center",
-      className
-    )}
-    {...props}>
-    {children}
-    <NavigationMenuViewport />
-  </NavigationMenuPrimitive.Root>
-))
-NavigationMenu.displayName = NavigationMenuPrimitive.Root.displayName
 
 const NavigationMenuList = React.forwardRef(({ className, ...props }, ref) => (
   <NavigationMenuPrimitive.List
@@ -73,8 +60,7 @@ const NavigationMenuViewport = React.forwardRef(({ className, ...props }, ref) =
       {...props} />
   </div>
 ))
-NavigationMenuViewport.displayName =
-  NavigationMenuPrimitive.Viewport.displayName
+NavigationMenuViewport.displayName = NavigationMenuPrimitive.Viewport.displayName
 
 const NavigationMenuIndicator = React.forwardRef(({ className, ...props }, ref) => (
   <NavigationMenuPrimitive.Indicator
@@ -88,17 +74,63 @@ const NavigationMenuIndicator = React.forwardRef(({ className, ...props }, ref) 
       className="relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm bg-border shadow-md" />
   </NavigationMenuPrimitive.Indicator>
 ))
-NavigationMenuIndicator.displayName =
-  NavigationMenuPrimitive.Indicator.displayName
+NavigationMenuIndicator.displayName = NavigationMenuPrimitive.Indicator.displayName
 
-export {
-  navigationMenuTriggerStyle,
-  NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuContent,
-  NavigationMenuTrigger,
-  NavigationMenuLink,
-  NavigationMenuIndicator,
-  NavigationMenuViewport,
-}
+// Main NavigationMenu component
+const NavigationMenu = React.forwardRef(({ 
+  className, 
+  children, 
+  items = [],
+  orientation = "horizontal",
+  ...props 
+}, ref) => {
+  
+  const renderMenuItems = () => {
+    if (items.length > 0) {
+      return items.map((item, index) => (
+        <NavigationMenuItem key={index}>
+          {item.trigger ? (
+            <>
+              <NavigationMenuTrigger className={item.triggerClassName}>
+                {item.triggerLabel}
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                {item.content}
+              </NavigationMenuContent>
+            </>
+          ) : (
+            <NavigationMenuLink
+              href={item.href}
+              className={navigationMenuTriggerStyle()}
+            >
+              {item.label}
+            </NavigationMenuLink>
+          )}
+        </NavigationMenuItem>
+      ))
+    }
+    
+    return children
+  }
+
+  return (
+    <NavigationMenuPrimitive.Root
+      ref={ref}
+      className={cn(
+        "relative z-10 flex max-w-max flex-1 items-center justify-center",
+        orientation === "vertical" && "flex-col",
+        className
+      )}
+      {...props}>
+      <NavigationMenuList className={orientation === "vertical" ? "flex-col space-x-0 space-y-1" : ""}>
+        {renderMenuItems()}
+      </NavigationMenuList>
+      <NavigationMenuViewport />
+    </NavigationMenuPrimitive.Root>
+  )
+})
+NavigationMenu.displayName = "NavigationMenu"
+
+
+export default NavigationMenu
+
