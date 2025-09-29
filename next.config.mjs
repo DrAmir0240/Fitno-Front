@@ -6,9 +6,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'server.myfitno.com',
+        hostname: 'fitno-server.liara.run',
         port: '',
-        pathname: '/media/**',
+        pathname: '/**',
       },
     ],
   },

@@ -129,7 +129,7 @@ export const ClubModal = ({ club, open, onOpenChange , showButton = false , show
                           </div>
                         </div>
                         <div className="text-xs text-gray-500 text-center">
-                          مدت زمان: {membership.days} روز
+                         تعداد جلسات: {membership.days} روز
                         </div>
                       </div>
                     ))}
