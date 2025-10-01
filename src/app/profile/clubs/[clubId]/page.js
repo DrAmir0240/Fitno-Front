@@ -1,5 +1,5 @@
 import ClubDetailsPage from "@/components/pages/user/ClubDetailsPage";
 
-export default function discount() {
+export default function clubDetails() {
   return <ClubDetailsPage />;
 }

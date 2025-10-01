@@ -1,5 +1,6 @@
 import api from "@/config/api";
 import { useQuery } from "@tanstack/react-query";
+import { useParams } from "next/navigation";
 
 const useAuthStatus = () => {
   const queryFn = () => api.get("/accounts/status/", { withCredentials: true });
@@ -13,6 +14,17 @@ const useAuthStatus = () => {
 };
 const useGetGyms = () => {
   const queryFn = () => api.get("/gyms/customer/gyms/");
+  const queryKey = ["gyms"];
+  const { data, error, isPending, isLoading, refetch } = useQuery({
+    queryKey,
+    queryFn,
+  });
+
+  return { data, error, isPending, isLoading, refetch };
+};
+const useGetGymDetails = () => {
+  const {clubId} = useParams()
+  const queryFn = () => api.get(`/gyms/customer/gyms/${clubId}`);
   const queryKey = ["gyms"];
   const { data, error, isPending, isLoading, refetch } = useQuery({
     queryKey,
@@ -103,6 +115,7 @@ const useGetProfile = () => {
 export {
   useAuthStatus,
   useGetGyms,
+  useGetGymDetails,
   useGetServices,
   useGetGymMessages,
   useGetPlatformMessages,
