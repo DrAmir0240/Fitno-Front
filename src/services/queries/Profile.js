@@ -81,6 +81,22 @@ const useGetNotifications = () => {
     queryFn,
   });
 };
+const useGetSingleNotification = (id) => {
+  const queryFn = () => api.get(`/communications/customer/notifications/${id}`);
+  const queryKey = ["notification"];
+  return useQuery({
+    queryKey,
+    queryFn,
+  });
+};
+const useGetProfile = () => {
+  const queryFn = () => api.get("/accounts/customer/profile/");
+  const queryKey = ["profile"];
+  return useQuery({
+    queryKey,
+    queryFn,
+  });
+};
 
 
  
@@ -93,5 +109,7 @@ export {
   useGetTickets,
   useGetTransactions,
   useGetSignedGyms,
-  useGetNotifications
+  useGetNotifications,
+  useGetSingleNotification,
+  useGetProfile
 };

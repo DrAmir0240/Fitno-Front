@@ -32,5 +32,24 @@ const useCreateTicket = () => {
     },
   });
 };
+const useUpdateProfile = () => {
+  const queryClient = useQueryClient();
+  const mutationFn = (data) =>
+    api.put("/accounts/customer/profile/", data , {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+  return useMutation({
+    mutationFn,
+    onSuccess: (response) => {
+      console.log(response);
+      queryClient.invalidateQueries({ queryKey: ["tickets"] });
+    },
+    onError: (error) => {
+      console.log(error);
+    },
+  });
+};
 
-export { useUpgradeProfile, useCreateTicket };
+export { useUpgradeProfile, useCreateTicket , useUpdateProfile };
