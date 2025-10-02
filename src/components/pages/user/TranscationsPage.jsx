@@ -13,7 +13,7 @@ const TransactionsPage = () => {
      <BreadCrumb title="تراکنش ها" />
 
       {/* Date Header */}
-      <div className='bg-[#EFEFEF] p-2 py-4 rounded-3xl'>
+      <div className='bg-[#EFEFEF] dark:bg-gray-800 p-2 py-4 rounded-3xl'>
         <p className="text-base md:text-xl font-[500] text-gray-600 mb-3 mx-2 ">امروز</p>
        
 

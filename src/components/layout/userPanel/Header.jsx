@@ -46,6 +46,7 @@ export default function Header() {
         </div>
 
         <div className="flex items-center gap-4">
+          
           <NotificationMenu messageItems={finalMessageItems} />
 
           <div className="bg-[#289DFC38] w-[92px] h-[33px] rounded-2xl flex justify-center items-center">

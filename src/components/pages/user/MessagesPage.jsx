@@ -30,7 +30,7 @@ const MessagesPage = () => {
   return (
     <div>
       <BreadCrumb title="اطلاعیه ها" />
-      <div className="bg-[#EFEFEF] p-2 py-4 rounded-3xl">
+      <div className="bg-[#EFEFEF] dark:bg-gray-800 p-2 py-4 rounded-3xl">
         <div className="flex w-full justify-start">
           <ReusableTabs
             tabs={tabsData}

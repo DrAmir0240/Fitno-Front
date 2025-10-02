@@ -54,17 +54,10 @@ const UserHomePage = () => {
           alt="userBack"
           width={375}
           height={458}
-          className="absolute hidden md:block -top-20 md:-top-30 lg:-top-40 left-4 md:left-8 lg:left-12 w-48 md:w-64 lg:w-80 h-auto opacity-60"
+          className="absolute hidden md:block -top-20 md:-top-30 lg:-top-64 left-4 md:left-8 lg:left-12 w-48 md:w-64 lg:w-80 h-auto opacity-60"
         />
         
-        {/* Ellipse Background */}
-        <Image
-          src="/images/user/ellipse.svg"
-          alt="userBack"
-          width={375}
-          height={458}
-          className="absolute hidden md:block -top-20 md:-top-30 lg:-top-40 left-4 md:left-8 lg:left-12 w-48 md:w-64 lg:w-80 h-auto rounded-full blur-3xl opacity-40"
-        />
+      
 
         {/* Mobile Background Images */}
         <Image

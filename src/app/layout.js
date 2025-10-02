@@ -2,6 +2,7 @@ import AuthContextProvider from "@/context/authContext";
 import { peyda } from "../utils/fonts";
 import "./globals.css";
 import TanstackQueryProvider from "@/provider/TanstackQueryProvider";
+import { ThemeProvider } from "@/provider/theme-provider";
 
 export const metadata = {
   title: "Fitno",
@@ -10,12 +11,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fa" dir="rtl">
+    <html lang="fa" dir="rtl" suppressHydrationWarning>
       <body className={peyda.className}>
          <TanstackQueryProvider>
+           <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
              <AuthContextProvider>
         {children}
         </AuthContextProvider>
+        </ThemeProvider>
         </TanstackQueryProvider>
         </body>
     </html>

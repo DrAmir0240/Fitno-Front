@@ -1,5 +1,5 @@
 "use client";
-import { Button, Input } from "@/components/ui";
+import { Button, Input, Select } from "@/components/ui";
 import Image from "next/image";
 import { FaArrowLeftLong, FaPlus } from "react-icons/fa6";
 import { useEffect, useRef, useState } from "react";
@@ -20,7 +20,6 @@ function SettingPage() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
 
-  // استفاده از React Hook Form
   const {
     register,
     handleSubmit,
@@ -36,7 +35,6 @@ function SettingPage() {
     },
   });
 
-  // وقتی userInfo تغییر کرد، مقادیر فرم را آپدیت کن
   useEffect(() => {
     if (userInfo) {
       setValue("full_name", userInfo.full_name || "");
@@ -73,16 +71,13 @@ function SettingPage() {
   };
 
   const onSubmit = (formData) => {
-    // ایجاد FormData برای ارسال فایل
     const submitData = new FormData();
-    
-    // اضافه کردن فیلدهای متنی
+
     submitData.append("full_name", formData.full_name);
     submitData.append("national_code", formData.national_code);
     submitData.append("city", formData.city);
     submitData.append("gender", formData.gender);
     
-    // اضافه کردن فایل اگر انتخاب شده باشد
     if (selectedFile) {
       submitData.append("profile_photo", selectedFile);
     }
@@ -90,6 +85,10 @@ function SettingPage() {
     console.log("Data to submit:", formData);
     updateProfile(submitData);
   };
+   const genderOptions = [
+    { value: "male", label: "مرد" },
+    { value: "female", label: "زن" }
+  ];
 
   return (
     <>
@@ -170,17 +169,15 @@ function SettingPage() {
           error={errors.national_code?.message}
         />
         
-        {/* برای جنسیت بهتر است از select استفاده کنید */}
-        <div>
-          <label className="block text-sm font-medium mb-2">جنسیت</label>
-          <select 
-            {...register("gender")}
-            className="w-full p-3 border border-gray-300 rounded-2xl"
-          >
-            <option value="male">مرد</option>
-            <option value="female">زن</option>
-          </select>
-        </div>
+        <Select
+          label="جنسیت"
+          options={genderOptions}
+          value={watch("gender")}
+          onValueChange={(value) => setValue("gender", value)}
+          placeholder="جنسیت خود را انتخاب کنید"
+          className="w-full"
+          triggerClassName="w-full p-3 border border-gray-300 rounded-2xl text-right"
+        />
         
         <Input 
           label="شهر" 

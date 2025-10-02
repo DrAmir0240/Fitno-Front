@@ -62,7 +62,7 @@ const DiscountsPage = () => {
     <div className="min-h-screen">
       <BreadCrumb title="لیست تخفیف ها" />
 
-      <div className="bg-[#F3F3F4] rounded-3xl py-4">
+      <div className="bg-[#F3F3F4] dark:bg-gray-800 rounded-3xl py-4">
         <ReusableTabs
           tabs={tabsData}
           defaultValue="active"

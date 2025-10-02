@@ -52,7 +52,7 @@ const MobileMenu = ({ className = "" }) => {
 
   return (
     <div
-      className={`fixed bottom-0 inset-x-0 rounded-t-[35px] max-w-[700px] m-auto !bg-gray-300 shadow-lg z-50 ${className}`}
+      className={`fixed bottom-0 inset-x-0 rounded-t-[35px] max-w-[700px] m-auto bg-gray-300 dark:bg-gray-800 shadow-lg dark:shadow-gray-900/80 border-t border-gray-200 dark:border-gray-700 z-50 transition-all duration-300 ${className}`}
     >
       <div className="flex justify-around items-end py-2 px-4">
         {menuItems.map((item) => (
@@ -64,18 +64,17 @@ const MobileMenu = ({ className = "" }) => {
           >
             <div className="flex flex-col items-center">
               <div
-                className={`w-12 h-12 rounded-2xl flex items-center justify-center text-white mb-2 -mt-6 shadow-lg transition-all duration-200`}
+                className="w-12 h-12 rounded-2xl flex items-center justify-center text-white mb-2 -mt-6 shadow-lg dark:shadow-gray-900/50 transition-all duration-200 group-hover:scale-110 "
                 style={{ background: item.gradient }}
               >
                 {item.icon}
               </div>
-
               <div
                 className={`flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-200 
                   ${
                     activeTab === item.href
-                      ? "text-blue-600 bg-blue-50"
-                      : "text-gray-600 group-hover:text-blue-600 group-hover:bg-blue-50"
+                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800"
+                      : "text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 group-hover:bg-blue-50 dark:group-hover:bg-blue-900/20"
                   }`}
               >
                 <span className="text-xs font-medium text-center">
