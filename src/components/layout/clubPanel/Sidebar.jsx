@@ -72,7 +72,7 @@ export default function Sidebar() {
   ];
 
   const SidebarContent = () => (
-    <div className="flex flex-col h-full bg-[#289DFC] text-white p-6 rounded-e-xl">
+    <div className="flex flex-col h-full bg-[#289DFC] dark:bg-blue-900  p-6 rounded-e-xl">
       <div className="flex flex-col h-full">
         <div className="flex justify-center items-center gap-2 py-4">
           <Image
@@ -93,11 +93,11 @@ export default function Sidebar() {
               return (
                 <li key={link.href}>
                   <Button
-                    variant="link"
+                    variant="gost"
                     href={link.href}
                     startIcon={link.icon}
                     className={cn(
-                      "flex items-center w-full justify-start p-3 rounded-md transition-all duration-200",
+                      "flex items-center w-full justify-start p-3  rounded-md transition-all duration-200",
                       isActive
                         ? "bg-white/20 backdrop-blur-sm text-white border border-white/30"
                         : "text-white/80 hover:bg-white/10 hover:text-white"

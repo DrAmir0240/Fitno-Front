@@ -4,7 +4,7 @@ import React from 'react'
 export const ProfileHeader =() =>{
   return (
    <div className="flex flex-col sm:flex-row items-center justify-between p-4 sm:p-6 border-b border-gray-200 gap-4">
-             <h1 className="text-lg sm:text-xl font-semibold text-gray-800 text-center sm:text-right">
+             <h1 className="text-lg sm:text-xl font-semibold text-gray-800  dark:text-white text-center sm:text-right">
                تنظیمات پروفایل باشگاه
              </h1>
              <div className="flex items-center space-x-2 space-x-reverse">

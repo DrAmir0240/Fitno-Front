@@ -20,7 +20,7 @@ export const ProfileImageUpload = ({ onImageUpload }) => {
   return (
     <div className="flex justify-center">
       <div className="relative">
-        <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-dashed border-gray-300 flex items-center justify-center overflow-hidden bg-gray-50">
+        <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-dashed border-gray-300 dark:border-gray-600 flex items-center justify-center overflow-hidden bg-gray-50 dark:bg-gray-700 transition-colors duration-300">
           {imagePreview ? (
             <img
               src={imagePreview}
@@ -29,8 +29,10 @@ export const ProfileImageUpload = ({ onImageUpload }) => {
             />
           ) : (
             <div className="text-center flex flex-col justify-center items-center">
-              <FiPlus className="text-lg sm:text-xl" />
-              <span className="text-xs text-gray-500 mt-1">افزودن تصویر</span>
+              <FiPlus className="text-lg sm:text-xl text-gray-500 dark:text-gray-400 transition-colors duration-300" />
+              <span className="text-xs text-gray-500 dark:text-gray-400 mt-1 transition-colors duration-300">
+                افزودن تصویر
+              </span>
             </div>
           )}
         </div>

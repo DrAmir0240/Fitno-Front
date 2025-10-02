@@ -12,7 +12,7 @@ function PageHeader({
 }) {
   return (
     <div className="flex flex-col md:flex-row gap-5 justify-between my-6 items-center">
-      <h1 className={`text-xl font-bold text-gray-800 ${titleClassName}`}>
+      <h1 className={`text-xl font-bold text-gray-800 dark:text-white ${titleClassName}`}>
         {title}
       </h1>
       

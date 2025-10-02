@@ -5,8 +5,8 @@ import {
   GalleryUploader,
   ImageUploader,
   ProvinceSelect,
-  RegisterHeader,
 } from "@/components/templates/club-panel/club-register";
+import PageHeader from "@/components/shared/PageHeader";
 
 export default function ClubRegistrationPage() {
   const [imagePreview, setImagePreview] = useState(null);
@@ -33,7 +33,10 @@ export default function ClubRegistrationPage() {
 
   return (
     <>
-      <RegisterHeader />
+       <PageHeader
+        title="ثبت باشگاه"
+        showButton={false}
+      />
 
       <form className="p-6 space-y-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
