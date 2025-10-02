@@ -3,8 +3,6 @@ import { MdLocalPhone } from "react-icons/md";
 import { TiLocation } from "react-icons/ti";
 
 export const ClubHeader = ({ club })=> {
-
-
   return (
     <>
       <div className="relative bg-gradient-to-br from-[#3474A8] via-[#4A8BC2] to-[#5FA3D8] rounded-3xl h-[280px] flex justify-center items-center mb-8 overflow-hidden shadow-md">

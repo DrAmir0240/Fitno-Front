@@ -28,7 +28,6 @@ const menuItems = [
   { name: "صفحه اصلی", href: "/", icon: RiHome6Line },
   { name: "پروفایل", href: "/profile", icon: TbUser },
   { name: "لیست باشگاه ها", href: "/profile/clubs", icon: CgGym },
-  { name: "ثبت نام در باشگاه", href: "/profile/sign-club", icon: CgGym },
   { name: "کیف پول", href: "/profile/wallet", icon: IoWalletOutline },
   {
     name: "کد های تخفیف",

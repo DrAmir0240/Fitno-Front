@@ -5,11 +5,10 @@ import Image from "next/image";
 import { MdLocalPhone, MdMoreVert } from "react-icons/md";
 import { TiLocation } from "react-icons/ti";
 
-export const UserClubCard = ({ club, onCardClick }) => {
+export const UserClubCard = ({ club }) => {
   return (
     <div
-      className="bg-[#E4E4E4] rounded-2xl relative cursor-pointer transition-transform hover:scale-105"
-      onClick={() => onCardClick(club)}
+      className="bg-[#E4E4E4] rounded-2xl relative cursor-pointer transition-transform hover:scale-105 pb-1"
     >
       <div className="absolute top-4 right-4 z-10">
         <Button

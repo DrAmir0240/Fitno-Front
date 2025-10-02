@@ -6,14 +6,8 @@ import { IoArrowForward } from "react-icons/io5";
 import { formatAmount } from "@/utils/formatData";
 
 export const ClubInfo =({ club }) =>{
-  const handleRegister = () => {
-    console.log("ثبت نام در باشگاه:", club?.title);
-    // router.push(`/register/${club?.id}`);
-  };
-
   return (
     <>
-      {/* توضیحات */}
       {club?.description && (
         <div className="bg-white rounded-3xl p-8 shadow-sm mb-8 border border-gray-100">
           <h2 className="text-2xl font-bold mb-4 text-[#3474A8] flex items-center gap-2">
@@ -24,7 +18,6 @@ export const ClubInfo =({ club }) =>{
         </div>
       )}
 
-      {/* ساعات کاری */}
       {club?.working_hours && (
         <div className="bg-white rounded-3xl p-8 shadow-sm mb-8 border border-gray-100">
           <h2 className="text-2xl font-bold mb-5 text-[#3474A8] flex items-center gap-2">
@@ -37,7 +30,6 @@ export const ClubInfo =({ club }) =>{
         </div>
       )}
 
-      {/* سانس های موجود */}
       {club?.membership_types && club?.membership_types?.length > 0 && (
         <div className="bg-white rounded-3xl p-8 shadow-sm mb-8 border border-gray-100">
           <h2 className="text-2xl font-bold mb-6 text-[#3474A8] flex items-center gap-2">
@@ -82,7 +74,6 @@ export const ClubInfo =({ club }) =>{
         </div>
       )}
 
-      {/* امکانات */}
       {club?.facilities && (
         <div className="bg-white rounded-3xl p-8 shadow-sm mb-8 border border-gray-100">
           <h2 className="text-2xl font-bold mb-5 text-[#3474A8] flex items-center gap-2">
@@ -108,7 +99,6 @@ export const ClubInfo =({ club }) =>{
         </div>
       )}
 
-      {/* گالری تصاویر */}
       {club?.gallery && club?.gallery?.length > 0 && (
         <div className="bg-white rounded-3xl p-8 shadow-sm mb-8 border border-gray-100">
           <h2 className="text-2xl font-bold mb-6 text-[#3474A8] flex items-center gap-2">
@@ -134,7 +124,6 @@ export const ClubInfo =({ club }) =>{
         </div>
       )}
 
-      {/* دکمه ثبت نام */}
       <div className="bg-white rounded-3xl p-8 shadow-sm mb-8 border border-gray-100 text-center">
         <div className="max-w-md mx-auto">
           <h3 className="text-2xl font-bold mb-4 text-[#3474A8]">
@@ -144,7 +133,7 @@ export const ClubInfo =({ club }) =>{
             همین حالا در باشگاه {club?.title} ثبت نام کنید و از امکانات ویژه بهره‌مند شوید
           </p>
           <Button
-            onClick={handleRegister}
+            href={`/profile/sign-club/${club?.id}`}
             className="bg-gradient-to-r w-full from-[#3474A8] to-[#5FA3D8] hover:from-[#2C6399] hover:to-[#4A8BC2] text-white px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-lg font-semibold"
             size="lg"
           >

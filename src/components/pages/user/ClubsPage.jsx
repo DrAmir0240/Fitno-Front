@@ -22,7 +22,6 @@ function ClubsPage() {
           <UserClubCard 
             key={club?.id} 
             club={club} 
-
           />
       </Link>
         ))}
