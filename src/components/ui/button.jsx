@@ -93,7 +93,7 @@ const Button = React.forwardRef(
         {children}
 
         {endIcon && (
-          <span className="inline-flex items-center mr-2 rtl:mr-0 rtl:ml-2 transition-colors duration-300">
+           <span className="inline-flex items-center mx-4  transition-colors duration-300">
             {endIcon}
           </span>
         )}
