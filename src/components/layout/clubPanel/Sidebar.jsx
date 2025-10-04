@@ -17,6 +17,7 @@ import { IoTicketOutline } from "react-icons/io5";
 import { IoImagesOutline } from "react-icons/io5";
 import { CgGym } from "react-icons/cg";
 import { PiUserCirclePlus, PiSignOut } from "react-icons/pi";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export default function Sidebar() {
   const { isOpen, closeSidebar } = useSidebar();
@@ -74,6 +75,7 @@ export default function Sidebar() {
   const SidebarContent = () => (
     <div className="flex flex-col h-full bg-[#289DFC] dark:bg-blue-900  p-6 rounded-e-xl">
       <div className="flex flex-col h-full">
+        <ThemeToggle/>
         <div className="flex justify-center items-center gap-2 py-4">
           <Image
             src="/images/profile.png"

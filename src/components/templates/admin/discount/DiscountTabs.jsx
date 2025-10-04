@@ -26,7 +26,7 @@ const DiscountTabs = ({ discountCodes }) => {
   ];
 
   return (
-    <div className="bg-[#F3F3F4] rounded-2xl sm:rounded-3xl py-3 sm:py-4 px-2 sm:px-0">
+    <div className="bg-[#F3F3F4] dark:bg-gray-800 rounded-2xl sm:rounded-3xl py-3 sm:py-4 px-2 sm:px-0">
       <ReusableTabs
         tabs={tabsData}
         defaultValue="active"

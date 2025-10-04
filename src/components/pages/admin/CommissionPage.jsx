@@ -19,7 +19,7 @@ function CommissionPage() {
     {
       title: "کمیسیون تک جلسه",
       amount: "630,000 تومان",
-      icon: <HiOutlineCurrencyDollar size={30} color="#396AFF" />,
+      icon: <HiOutlineCurrencyDollar size={30} color="#16DBCC" />,
     },
   ];
 

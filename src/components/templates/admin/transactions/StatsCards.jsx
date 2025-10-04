@@ -11,7 +11,7 @@ export const StatsCards = () => {
     {
       title: "تراکنش های ورودی",
       amount: "630,000 تومان",
-      icon: <FaHandHoldingDollar size={30} color="#396AFF" />,
+      icon: <FaHandHoldingDollar size={30} color="#16DBCC" />,
     },
     {
       title: "تراکنش های خروجی",
