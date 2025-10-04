@@ -2,7 +2,7 @@ import { StatsCard } from "@/components/shared";
 import { FaDollarSign, FaHandHoldingDollar, FaSackDollar } from "react-icons/fa6";
 
 export const StatsCards = () => {
-  const statsCards = [
+   const statsCards = [
     {
       title: " مجموع تراکنش ها",
       amount: "630,000 تومان",
